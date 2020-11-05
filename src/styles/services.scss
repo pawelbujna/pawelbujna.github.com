@@ -1,0 +1,110 @@
+.services {
+  padding: 40px 0;
+  background-color: $primaryBackgroundColor;
+
+  @include until($widescreen) {
+    padding: 70px;
+  }
+
+  &-icon {
+    stroke: black;
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &-titles {
+    display: flex;
+
+    div,
+    p {
+      flex-grow: 1;
+    }
+  }
+
+  &-title {
+    color: black;
+    position: relative;
+
+    @include underscore;
+  }
+
+  &-cards {
+    display: flex;
+    justify-content: space-between;
+
+    @include until($desktop) {
+      flex-direction: column;
+    }
+  }
+
+  &-card {
+    background-color: white;
+    flex-basis: 370px;
+    text-align: center;
+    padding: 40px;
+
+    @include until($widescreen) {
+      flex-basis: 300px;
+    }
+
+    &-title {
+      color: black;
+      position: relative;
+      display: inline-block;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background-color: $colorMain;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        margin: 0 auto;
+        transition: all 0.4s ease-in;
+      }
+    }
+
+    &-description {
+      line-height: 2;
+    }
+
+    &:hover & {
+      &-title {
+        &:after {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .services {
+    background-color: $darkThemePrimaryBackgroundColor;
+
+    &-icon {
+      stroke: white;
+    }
+
+    &-title {
+      color: white;
+    }
+
+    &-card {
+      background-color: $darkThemeSecondaryBackgroundColor;
+
+      &-title {
+        color: white;
+      }
+
+      &-description {
+        color: $darkThemeTextColor;
+      }
+    }
+  }
+}

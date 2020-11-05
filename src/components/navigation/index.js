@@ -44,21 +44,21 @@ const Navigation = () => {
         <div className="navbar-end">
           <Link
             className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-            to={`/about`}
+            href="#about-us"
           >
             {t("navbar.about")}
           </Link>
           <Link
             className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-            to={`/collections`}
+            href="#services"
           >
-            {t("navbar.collections")}
+            {t("navbar.services")}
           </Link>
           <Link
             className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-            to={`/gallery`}
+            href="#collections"
           >
-            {t("navbar.gallery")}
+            {t("navbar.collections")}
           </Link>
 
           <div

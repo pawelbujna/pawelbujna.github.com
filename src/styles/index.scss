@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @import "variables.scss";
 
 html[data-theme="dark"] {
@@ -8,12 +12,117 @@ html[data-theme="dark"] {
 
 @import "~bulma/bulma.sass";
 
+@mixin underscore {
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    width: 15%;
+    height: 6px;
+    display: block;
+    background-color: $colorMain;
+  }
+}
+
+@mixin hover-underscore {
+  $duration: 0.2s;
+  $distance: 8px;
+  $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $colorMain;
+  }
+
+  &:before {
+    opacity: 0;
+    transform: translateY(-$distance);
+    transition: transform 0s $easeOutBack, opacity 0s;
+  }
+
+  &:after {
+    opacity: 0;
+    transform: translateY($distance/2);
+    transition: transform $duration $easeOutBack, opacity $duration;
+  }
+
+  &:hover:not(.is-active),
+  &:focus:not(.is-active) {
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateY($distance * 1.5);
+    }
+    &:before {
+      transition: transform $duration $easeOutBack, opacity $duration;
+    }
+    &:after {
+      transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+    }
+  }
+
+  &.is-active {
+    &:after {
+      opacity: 1;
+      transform: translateY($distance * 1.5);
+    }
+  }
+}
+
 @import "hero.scss";
 @import "navbar.scss";
 @import "header.scss";
 @import "colors.scss";
+@import "about-us.scss";
+@import "services.scss";
+@import "collections.scss";
+
+@keyframes ripple {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.05, 1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1, 1.3);
+    opacity: 0;
+  }
+}
 
 .button {
   border-radius: 0;
   font-weight: 500;
+}
+
+.ripple {
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid $colorMain;
+
+    // animation: ripple 0.3s linear infinite;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      animation: ripple 0.3s linear;
+    }
+  }
 }

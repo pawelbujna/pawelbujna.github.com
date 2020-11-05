@@ -1,0 +1,111 @@
+.collections {
+  padding: 40px 0;
+
+  @include until($widescreen) {
+    padding: 70px;
+  }
+
+  &-titles {
+    display: flex;
+
+    div,
+    p {
+      flex-grow: 1;
+    }
+  }
+
+  &-title {
+    color: black;
+    position: relative;
+
+    @include underscore;
+  }
+
+  &-menu {
+    color: black;
+    display: flex;
+    justify-content: center;
+
+    @include until($tablet) {
+      flex-wrap: wrap;
+    }
+
+    div {
+      @include until($desktop) {
+        padding: 10px 10px;
+      }
+
+      span {
+        transition: 0.4s ease color;
+
+        @include until($desktop) {
+          padding: 10px 10px;
+        }
+
+        cursor: pointer;
+        padding: 50px 20px;
+
+        &:hover {
+          color: $colorMain;
+        }
+      }
+
+      &.is-active {
+        span {
+          color: $colorMain;
+        }
+      }
+    }
+  }
+
+  &-overlay {
+    margin: 20px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(white, 0.8);
+    text-align: center;
+    transform: translateY(80%);
+    opacity: 0;
+    transition: all 0.4s ease;
+
+    p {
+      position: relative;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-item {
+    position: relative;
+
+    &:hover,
+    &:active {
+      .collections-overlay {
+        transform: translateY(-10%);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .collections {
+    &-title {
+      color: white;
+    }
+
+    &-menu {
+      color: white;
+    }
+
+    &-overlay {
+      background-color: rgba(black, 0.8);
+
+      p {
+        color: $darkThemeTextColor;
+      }
+    }
+  }
+}

@@ -9,7 +9,8 @@ import hero3 from "./assets/hero-3.jpg"
 import hero7 from "./assets/hero-7.jpg"
 
 import "swiper/swiper.scss"
-import "swiper/components/pagination/pagination.scss"
+import styles from "swiper/components/pagination/pagination.scss"
+console.log({ styles })
 
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay])
 
@@ -36,7 +37,6 @@ const Hero = () => {
   return (
     <Swiper
       effect="coverflow"
-      autoheight={true}
       coverflowEffect={{ rotate: 50 }}
       direction="horizontal"
       autoplay={{
@@ -54,6 +54,7 @@ const Hero = () => {
     >
       {data.map(item => (
         <SwiperSlide
+          key={item.title}
           style={{
             backgroundImage: `url(${item.image})`,
             backgroundSize: "cover",
@@ -66,9 +67,9 @@ const Hero = () => {
             <p className="is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-weight-semibold is-uppercase">
               {item.title}
             </p>
-            <button class="button is-primary is-uppercase">
+            <a className="button is-primary is-uppercase" href="#collections">
               {t("hero.button")}
-            </button>
+            </a>
           </div>
         </SwiperSlide>
       ))}

@@ -1,0 +1,50 @@
+.about-us {
+  display: flex;
+
+  @include until($tablet) {
+    flex-direction: column;
+  }
+
+  & > div {
+    flex: 1;
+  }
+
+  &-info {
+    @include until($desktop) {
+      padding: 70px 20px;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-photo {
+    @include until($desktop) {
+      min-height: 300px;
+    }
+
+    min-height: 450px;
+  }
+
+  p {
+    &:first-child {
+      position: relative;
+      color: black;
+
+      @include underscore;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .about-us {
+    p {
+      color: white;
+
+      &:nth-child(2) {
+        color: $darkThemeTextColor;
+      }
+    }
+  }
+}

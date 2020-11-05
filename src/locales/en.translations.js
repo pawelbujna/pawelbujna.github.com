@@ -1,7 +1,7 @@
 const translations = {
   navbar: {
     about: "about us",
-    gallery: "gallery",
+    services: "services",
     collections: "collections",
   },
   hero: {
@@ -19,6 +19,43 @@ const translations = {
         "Let your window be your new tv with wonderfull autumn collection",
     },
     button: "check it now",
+  },
+  aboutUs: {
+    title: "Who we are?",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus veritatis architecto vero totam blanditiis esse assumenda perspiciatis aut modi facilis debitis voluptates, sunt dolore atque? Fugiat maxime enim laborum aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus veritatis architecto vero totam blanditiis esse assumenda perspiciatis aut modi facilis debitis voluptates, sunt dolore atque? Fugiat maxime enim laborum aperiam.",
+  },
+  services: {
+    title: "Our services",
+    something: {
+      title: "Curtains",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+    },
+    curtains: {
+      title: "Curtains",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+    },
+    blinds: {
+      title: "Blinds",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+    },
+  },
+  collections: {
+    title: "Our collections",
+    menu: {
+      all: "All",
+      wood: "Wood",
+      natural: "Natural",
+    },
+    gallery: {
+      zoomIn: "Zoom in",
+    },
+    item: {
+      description: "Collingwood Residence",
+    },
   },
 }
 

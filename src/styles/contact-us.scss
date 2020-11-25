@@ -1,0 +1,86 @@
+.contact-us {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @include until($tablet) {
+    flex-direction: column;
+  }
+
+  & > div {
+    &:first-child {
+      flex-basis: 66%;
+    }
+
+    &:last-child {
+      flex-basis: 33%;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include until($desktop) {
+      padding: 70px 20px;
+    }
+  }
+
+  &-card {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: white;
+      transition: 0.4s ease color;
+
+      &:hover {
+        color: $colorMain;
+      }
+    }
+  }
+
+  &-container {
+    margin-left: 70px;
+  }
+
+  &-icon {
+    stroke: $colorMain;
+    margin-top: 20px;
+    margin-right: 30px;
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &-photo {
+    @include until($desktop) {
+      min-height: 300px;
+    }
+
+    min-height: 450px;
+  }
+
+  p {
+    &:first-child {
+      position: relative;
+      color: black;
+
+      @include underscore;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .contact-us {
+    p {
+      color: white;
+
+      &:nth-child(2) {
+        color: $darkThemeTextColor;
+      }
+    }
+  }
+}

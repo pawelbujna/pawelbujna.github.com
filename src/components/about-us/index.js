@@ -10,10 +10,12 @@ const AboutUs = () => {
     <div id="about-us" className="about-us">
       <div className="about-us-info px-6" data-aos="fade-up">
         <div>
-          <p className="is-size-3-desktop is-size-4-tablet is-size-4-mobile is-uppercase has-text-weight-semibold mb-6">
+          <div className="about-us-title is-size-3-desktop is-size-4-tablet is-size-4-mobile is-uppercase has-text-weight-semibold mb-6">
             {t("aboutUs.title")}
-          </p>
-          <p>{t("aboutUs.description")}</p>
+          </div>
+          <p>{t("aboutUs.description1")}</p>
+          <br />
+          <p>{t("aboutUs.description2")}</p>
         </div>
       </div>
       <div

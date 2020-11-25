@@ -27,24 +27,22 @@
     min-height: 450px;
   }
 
-  p {
-    &:first-child {
-      position: relative;
-      color: black;
+  &-title {
+    position: relative;
+    color: black;
 
-      @include underscore;
-    }
+    @include underscore;
   }
 }
 
 [data-theme="dark"] {
   .about-us {
     p {
-      color: white;
+      color: $darkThemeTextColor;
+    }
 
-      &:nth-child(2) {
-        color: $darkThemeTextColor;
-      }
+    &-title {
+      color: white;
     }
   }
 }

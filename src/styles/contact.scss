@@ -1,0 +1,80 @@
+.contact {
+  padding: 40px 0;
+  background-color: $primaryBackgroundColor;
+
+  @include until($widescreen) {
+    padding: 70px;
+  }
+
+  &-icon {
+    stroke: $colorMain;
+    margin-bottom: 20px;
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &-titles {
+    display: flex;
+
+    div,
+    p {
+      flex-grow: 1;
+    }
+  }
+
+  &-title {
+    color: black;
+    position: relative;
+
+    @include underscore;
+  }
+
+  &-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+    @include until($widescreen) {
+      padding: 20px;
+    }
+
+    a {
+      color: black;
+      transition: 0.4s ease color;
+
+      &:hover {
+        color: $colorMain;
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .contact {
+    color: white;
+    background-color: $darkThemePrimaryBackgroundColor;
+
+    &-title {
+      color: white;
+    }
+
+    &-card {
+      background-color: $darkThemeSecondaryBackgroundColor;
+
+      a {
+        color: white;
+        transition: 0.4s ease color;
+
+        &:hover {
+          color: $colorMain;
+        }
+      }
+    }
+  }
+}

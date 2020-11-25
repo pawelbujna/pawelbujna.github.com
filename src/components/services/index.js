@@ -10,10 +10,10 @@ const Services = () => {
         <div className="services-icon mb-5">
           <svg
             viewBox="0 0 24 24"
-            stroke-width="0.5"
+            strokeWidth="0.5"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M12 3c0.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -22,17 +22,17 @@ const Services = () => {
       ),
       title: t("services.curtains.title"),
       description: t("services.curtains.description"),
-      animationDelay: 300,
+      animationDelay: 100,
     },
     {
       icon: (
         <div className="services-icon mb-5">
           <svg
             viewBox="0 0 24 24"
-            stroke-width="0.5"
+            strokeWidth="0.5"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <circle cx="12" cy="12" r="4" />
@@ -42,17 +42,17 @@ const Services = () => {
       ),
       title: t("services.blinds.title"),
       description: t("services.blinds.description"),
-      animationDelay: 500,
+      animationDelay: 200,
     },
     {
       icon: (
         <div className="services-icon mb-5">
           <svg
             viewBox="0 0 24 24"
-            stroke-width="0.5"
+            strokeWidth="0.5"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <polyline points="5 12 3 12 12 3 21 12 19 12" />
@@ -63,7 +63,7 @@ const Services = () => {
       ),
       title: t("services.something.title"),
       description: t("services.something.description"),
-      animationDelay: 700,
+      animationDelay: 300,
     },
   ]
 

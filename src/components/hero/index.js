@@ -36,6 +36,7 @@ const Hero = () => {
 
   return (
     <Swiper
+      id="hero"
       effect="coverflow"
       coverflowEffect={{ rotate: 50 }}
       direction="horizontal"

@@ -75,15 +75,52 @@
       position: relative;
       margin-bottom: 15px;
     }
+
+    .button {
+      border-radius: 0 !important;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    &-title {
+      position: relative;
+      padding-bottom: 15px;
+      color: black;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        width: 30%;
+        margin: 0 auto;
+        background-color: $colorMain;
+      }
+    }
+
+    &-details {
+      display: flex;
+      text-align: center;
+
+      & > div {
+        flex: 1;
+
+        & > p:nth-child(2) {
+          color: black;
+        }
+      }
+    }
   }
 
   &-item {
     position: relative;
+    cursor: pointer;
 
     &:hover,
     &:active {
       .collections-overlay {
-        transform: translateY(-10%);
+        transform: translateY(0);
         opacity: 1;
       }
     }
@@ -103,8 +140,17 @@
     &-overlay {
       background-color: rgba(black, 0.8);
 
-      p {
-        color: $darkThemeTextColor;
+      &-title {
+        color: white;
+      }
+
+      &-details {
+        & > div {
+          color: $darkThemeTextColor;
+          & > p:nth-child(2) {
+            color: white;
+          }
+        }
       }
     }
   }

@@ -1,9 +1,12 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { Header } from "./header"
 import { SEO } from "./seo"
 import { ThemeProvider } from "./themeContext"
 import AOS from "aos"
+
+import { Footer } from "components/footer"
+import { Loader } from "components/loader"
 
 import "./i18n"
 
@@ -12,6 +15,19 @@ import "styles/index.scss"
 import "aos/dist/aos.css"
 
 const Layout = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [isAnimating, setIsAnimating] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsAnimating(false)
+
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 500)
+    }, 2000)
+  }, [])
+
   useEffect(() => {
     AOS.init({
       once: true,
@@ -20,11 +36,14 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider>
+      {isLoading && <Loader isAnimating={isAnimating} />}
       <SEO />
       <Header />
       <div id="page-wrap">
         <main>{children}</main>
-        <footer>{/* <Footer /> */}</footer>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </ThemeProvider>
   )

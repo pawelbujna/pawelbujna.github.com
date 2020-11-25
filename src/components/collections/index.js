@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import ImageViewer from "react-simple-image-viewer"
 
 import W1 from "./assets/seriawood/1.jpg"
 import W2 from "./assets/seriawood/2.jpg"
@@ -11,17 +12,6 @@ import W7 from "./assets/seriawood/7.jpg"
 import W8 from "./assets/seriawood/8.jpg"
 import W9 from "./assets/seriawood/9.jpg"
 import W10 from "./assets/seriawood/10.jpg"
-
-import WT1 from "./assets/seriawood/thumb/1.jpg"
-import WT2 from "./assets/seriawood/thumb/2.jpg"
-import WT3 from "./assets/seriawood/thumb/3.jpg"
-import WT4 from "./assets/seriawood/thumb/4.jpg"
-import WT5 from "./assets/seriawood/thumb/5.jpg"
-import WT6 from "./assets/seriawood/thumb/6.jpg"
-import WT7 from "./assets/seriawood/thumb/7.jpg"
-import WT8 from "./assets/seriawood/thumb/8.jpg"
-import WT9 from "./assets/seriawood/thumb/9.jpg"
-import WT10 from "./assets/seriawood/thumb/10.jpg"
 
 import N1 from "./assets/serianatural/1.jpg"
 import N2 from "./assets/serianatural/2.jpg"
@@ -36,166 +26,246 @@ import N10 from "./assets/serianatural/10.jpg"
 import N11 from "./assets/serianatural/11.jpg"
 import N12 from "./assets/serianatural/12.jpg"
 
-import NT1 from "./assets/serianatural/thumb/1.jpg"
-import NT2 from "./assets/serianatural/thumb/2.jpg"
-import NT3 from "./assets/serianatural/thumb/3.jpg"
-import NT4 from "./assets/serianatural/thumb/4.jpg"
-import NT5 from "./assets/serianatural/thumb/5.jpg"
-import NT6 from "./assets/serianatural/thumb/6.jpg"
-import NT7 from "./assets/serianatural/thumb/7.jpg"
-import NT8 from "./assets/serianatural/thumb/8.jpg"
-import NT9 from "./assets/serianatural/thumb/9.jpg"
-import NT10 from "./assets/serianatural/thumb/10.jpg"
-import NT11 from "./assets/serianatural/thumb/11.jpg"
-import NT12 from "./assets/serianatural/thumb/12.jpg"
+import E1 from "./assets/examples/1.jpg"
+import E2 from "./assets/examples/2.jpg"
+import E3 from "./assets/examples/3.jpg"
+import E4 from "./assets/examples/4.jpg"
+import E5 from "./assets/examples/5.jpg"
+import E6 from "./assets/examples/6.jpg"
 
 const Collections = () => {
   const { t } = useTranslation()
   const [currentType, setCurrentType] = useState("all")
   const [activeGallery, setActiveGallery] = useState([])
+  const [imagesArray, setImagesArray] = useState([])
+  const [visible, setVisible] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
+
   const data = [
     {
-      image: W1,
-      thumb: WT1,
+      src: W1,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W2,
-      thumb: WT2,
+      src: W2,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W3,
-      thumb: WT3,
+      src: W3,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W4,
-      thumb: WT4,
+      src: W4,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W5,
-      thumb: WT5,
+      src: W5,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W6,
-      thumb: WT6,
+      src: W6,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W7,
-      thumb: WT7,
+      src: W7,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W8,
-      thumb: WT8,
+      src: W8,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W9,
-      thumb: WT9,
+      src: W9,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: W10,
-      thumb: WT10,
+      src: W10,
       description: t("collections.item.description"),
-      type: "wood",
+      type: ["all", "wood"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N1,
-      thumb: NT1,
+      src: N1,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N2,
-      thumb: NT2,
+      src: N2,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N3,
-      thumb: NT3,
+      src: N3,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N4,
-      thumb: NT4,
+      src: N4,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N5,
-      thumb: NT5,
+      src: N5,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N6,
-      thumb: NT6,
+      src: N6,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N7,
-      thumb: NT7,
+      src: N7,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N8,
-      thumb: NT8,
+      src: N8,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N9,
-      thumb: NT9,
+      src: N9,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N10,
-      thumb: NT10,
+      src: N10,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N11,
-      thumb: NT11,
+      src: N11,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
     },
     {
-      image: N12,
-      thumb: NT12,
+      src: N12,
       description: t("collections.item.description"),
-      type: "natural",
+      type: ["all", "natural"],
+      info1: "2mm",
+      info2: "20m",
+      info3: t("collections.item.silk"),
+    },
+    {
+      src: E1,
+      description: t("collections.item.description"),
+      type: ["all", "example"],
+    },
+    {
+      src: E2,
+      description: t("collections.item.description"),
+      type: ["all", "example"],
+    },
+    {
+      src: E3,
+      description: t("collections.item.description"),
+      type: ["all", "example"],
+    },
+    {
+      src: E4,
+      description: t("collections.item.description"),
+      type: ["all", "example"],
+    },
+    {
+      src: E5,
+      description: t("collections.item.description"),
+      type: ["all", "example"],
+    },
+    {
+      src: E6,
+      description: t("collections.item.description"),
+      type: ["all", "example"],
     },
   ]
 
-  const filterImages = type => data.filter(item => item.type === type)
+  const getImagesStrings = type =>
+    data
+      .map(item => {
+        if (item.type.includes(type)) {
+          return item.src
+        }
+      })
+      .filter(Boolean)
 
-  const getAnimationDelay = index => index * 60
+  const filterImages = type => data.filter(item => item.type.includes(type))
+
+  const getAnimationDelay = index => index * 30
 
   useEffect(() => {
-    currentType === "all"
-      ? setActiveGallery(data)
-      : setActiveGallery(filterImages(currentType))
+    setActiveGallery(filterImages(currentType))
+    setImagesArray(getImagesStrings(currentType))
   }, [currentType])
 
   return (
@@ -251,34 +321,91 @@ const Collections = () => {
               {t("collections.menu.natural")}{" "}
             </span>
           </div>
+          <div
+            className={`has-text-weight-semibold is-size-6 ${
+              currentType === "example" ? "is-active" : ""
+            }`}
+          >
+            <span
+              onClick={() => {
+                setCurrentType("example")
+              }}
+            >
+              {t("collections.menu.examples")}{" "}
+            </span>
+          </div>
         </div>
 
         <div className="collections-gallery mt-6">
           <div className="columns is-multiline">
             {activeGallery.map((item, index) => (
               <div className="column collections-item is-3-desktop is-6-tablet is-12-mobile pb-5">
-                <div
-                  aria-haspopup="true"
-                  data-aos-delay={getAnimationDelay(index)}
-                  data-aos="fade-up"
-                  style={{
-                    backgroundImage: `url(${item.thumb})`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    height: "400px",
-                  }}
-                ></div>
-                <div className="collections-overlay">
-                  <p className="is-size-6-desktop is-size-6-tablet is-size-6-mobile is-uppercase">
-                    {t(item.description)}
-                  </p>
-                  <button className="button is-primary is-uppercase">
-                    {t("collections.gallery.zoomIn")}
-                  </button>
+                <div style={{ overflow: "hidden", position: "relative" }}>
+                  <div
+                    aria-haspopup="true"
+                    data-aos-delay={getAnimationDelay(index)}
+                    data-aos="fade-up"
+                    style={{
+                      background: `center / cover no-repeat url(${item.src})`,
+                      height: "400px",
+                    }}
+                  ></div>
+                  <div className="collections-overlay">
+                    <p className="collections-overlay-title is-size-6-desktop is-size-6-tablet is-size-6-mobile is-uppercase has-text-weight-semibold">
+                      {t(item.description)}
+                    </p>
+                    {item.info1 && item.info2 && item.info3 && (
+                      <div className="collections-overlay-details">
+                        <div className="is-size-7">
+                          <p className="m-0">
+                            {`${t("collections.item.thickness")}:`}
+                          </p>
+                          <p className="m-0 has-text-weight-semibold">
+                            {`${item.info1}`}
+                          </p>
+                        </div>
+                        <div className="is-size-7">
+                          <p className="m-0">{`${t(
+                            "collections.item.long"
+                          )}:`}</p>
+                          <p className="m-0 has-text-weight-semibold">
+                            {`${item.info2}`}
+                          </p>
+                        </div>
+                        <div className="is-size-7">
+                          <p className="m-0">
+                            {`${t("collections.item.fabric")}:`}
+                          </p>
+                          <p className="m-0 has-text-weight-semibold">
+                            {`${item.info3}`}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                    <button
+                      onClick={() => {
+                        setCurrentIndex(index)
+                        setVisible(true)
+                      }}
+                      className="button is-primary is-uppercase"
+                    >
+                      {t("collections.gallery.zoomIn")}
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
+
+            {visible && (
+              <ImageViewer
+                src={imagesArray}
+                currentIndex={currentIndex}
+                onClose={() => {
+                  setCurrentIndex(0)
+                  setVisible(false)
+                }}
+              />
+            )}
           </div>
         </div>
       </div>

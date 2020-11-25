@@ -7,7 +7,7 @@
   }
 
   &-icon {
-    stroke: black;
+    stroke: $colorMain;
 
     svg {
       width: 60px;
@@ -86,10 +86,6 @@
 [data-theme="dark"] {
   .services {
     background-color: $darkThemePrimaryBackgroundColor;
-
-    &-icon {
-      stroke: white;
-    }
 
     &-title {
       color: white;

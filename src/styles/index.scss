@@ -4,13 +4,24 @@ html {
   scroll-behavior: smooth;
 }
 
+.react-simple-image-viewer__modal {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
 @import "variables.scss";
+@import "~bulma/bulma.sass";
 
 html[data-theme="dark"] {
   background-color: $darkThemeSecondaryBackgroundColor;
 }
 
-@import "~bulma/bulma.sass";
+body {
+  padding-top: 150px !important;
+
+  @include until($desktop) {
+    padding-top: 110px !important;
+  }
+}
 
 @mixin underscore {
   &:before {
@@ -34,7 +45,7 @@ html[data-theme="dark"] {
   &:after {
     content: "";
     position: absolute;
-    bottom: 50px;
+    bottom: 60px;
     left: 0;
     right: 0;
     height: 2px;
@@ -67,13 +78,6 @@ html[data-theme="dark"] {
       transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
     }
   }
-
-  &.is-active {
-    &:after {
-      opacity: 1;
-      transform: translateY($distance * 1.5);
-    }
-  }
 }
 
 @import "hero.scss";
@@ -83,6 +87,10 @@ html[data-theme="dark"] {
 @import "about-us.scss";
 @import "services.scss";
 @import "collections.scss";
+@import "contact.scss";
+@import "contact-us.scss";
+@import "footer.scss";
+@import "loader.scss";
 
 @keyframes ripple {
   0% {

@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+const { CMS_URL } = process.env
+
 module.exports = {
   siteMetadata: {
     title: `ADBLIND Materiały do rolet dzień i noc`,
@@ -24,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL: CMS_URL,
         contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
           `news`,

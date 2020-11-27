@@ -27,7 +27,7 @@ const Navigation = () => {
   }, [currentElement])
 
   const handleScroll = () => {
-    if (window.pageYOffset > 0) {
+    if (window.pageYOffset > 150) {
       setIsScrolled(true)
     } else {
       setIsScrolled(false)

@@ -21,5 +21,24 @@ module.exports = {
         trackingId: "G-HLWGHB3BDY",
       },
     },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        contentTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+          `news`,
+        ],
+        queryLimit: 100,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Poppins:300,400,500,600,700"],
+        },
+      },
+    },
   ],
 }

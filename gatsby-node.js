@@ -12,3 +12,17 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   })
 }
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+//   const typeDefs = `
+//     type News implements Node {
+//       title_pl: String
+//       title_en: String
+//       description_pl: String
+//       description_en: String
+//       date: Date
+//     }
+//   `
+//   createTypes(typeDefs)
+// }

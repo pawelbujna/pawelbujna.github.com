@@ -16,12 +16,13 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "animated-number-react": "^0.1.1",
     "aos": "^3.0.0-beta.6",
     "bulma": "^0.9.1",
+    "formik": "^2.2.5",
     "gatsby": "^2.19.45",
     "gatsby-plugin-google-analytics": "^2.6.0",
     "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-recaptcha": "^1.0.5",
     "gatsby-plugin-sass": "^2.3.16",
     "gh-pages": "^3.1.0",
     "i18next": "^19.8.2",
@@ -29,12 +30,17 @@
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-countup": "^4.3.3",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-i18next": "^11.7.3",
     "react-icons": "^3.9.0",
+    "react-recaptcha": "^2.3.10",
     "react-simple-image-viewer": "^0.0.7",
-    "swiper": "^6.3.3"
+    "react-visibility-sensor": "^5.1.1",
+    "swiper": "^6.3.3",
+    "use-ssr": "^1.0.23",
+    "yup": "^0.31.0"
   },
   "devDependencies": {
     "prettier": "2.1.2"

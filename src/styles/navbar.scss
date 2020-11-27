@@ -27,12 +27,16 @@
     color: black;
 
     &:hover {
-      color: $colorMain;
+      color: black !important;
     }
 
     &:not(.logo) {
       @include from($desktop) {
-        // @include hover-underscore;
+        span {
+          position: relative;
+
+          @include hover-underscore;
+        }
 
         &:before,
         &:after {
@@ -47,6 +51,10 @@
     &-item {
       padding-top: 15px;
       padding-bottom: 15px;
+
+      &:hover {
+        color: white;
+      }
 
       &:not(.logo) {
         &:before,
@@ -110,7 +118,7 @@ html[data-theme="dark"] {
     transition: color 0.3s ease;
 
     &:hover {
-      color: $colorMain;
+      color: white !important;
     }
   }
 

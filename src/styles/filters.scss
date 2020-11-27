@@ -1,0 +1,49 @@
+.filters {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @include until($tablet) {
+    flex-direction: column-reverse;
+  }
+
+  & > div {
+    flex: 1;
+  }
+
+  &-info {
+    @include until($desktop) {
+      padding: 70px 20px;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-photo {
+    @include until($desktop) {
+      min-height: 300px;
+    }
+
+    min-height: 450px;
+  }
+
+  &-title {
+    position: relative;
+    color: black;
+
+    @include underscore;
+  }
+}
+
+[data-theme="dark"] {
+  .filters {
+    p {
+      color: $darkThemeTextColor;
+    }
+
+    &-title {
+      color: white;
+    }
+  }
+}

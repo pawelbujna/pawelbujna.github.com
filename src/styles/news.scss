@@ -1,0 +1,39 @@
+.news {
+  background-color: $primaryBackgroundColor;
+
+  &-titles {
+    display: flex;
+
+    div,
+    p {
+      flex-grow: 1;
+    }
+  }
+
+  .card {
+    color: $primaryTextColor;
+  }
+
+  &-title {
+    color: black;
+    position: relative;
+
+    @include underscore;
+  }
+}
+
+[data-theme="dark"] {
+  .news {
+    color: white;
+    background-color: $darkThemePrimaryBackgroundColor;
+
+    .card {
+      background-color: $darkThemeSecondaryBackgroundColor;
+      color: $darkThemeTextColor;
+    }
+
+    &-title {
+      color: white;
+    }
+  }
+}

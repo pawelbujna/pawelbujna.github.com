@@ -45,7 +45,7 @@ body {
   &:after {
     content: "";
     position: absolute;
-    bottom: 60px;
+    bottom: 0;
     left: 0;
     right: 0;
     height: 2px;
@@ -78,6 +78,14 @@ body {
       transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
     }
   }
+
+  &.is-active {
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateY($distance * 1.5);
+    }
+  }
 }
 
 @import "hero.scss";
@@ -85,12 +93,15 @@ body {
 @import "header.scss";
 @import "colors.scss";
 @import "about-us.scss";
+@import "filters.scss";
 @import "services.scss";
 @import "collections.scss";
 @import "contact.scss";
 @import "contact-us.scss";
 @import "footer.scss";
 @import "loader.scss";
+@import "tips.scss";
+@import "news.scss";
 
 @keyframes ripple {
   0% {

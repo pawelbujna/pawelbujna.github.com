@@ -1,0 +1,21 @@
+.tips {
+  text-align: center;
+  color: black;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $primaryBackgroundColor;
+
+  svg {
+    stroke: $colorMain;
+
+    width: 100px;
+    height: 100px;
+  }
+}
+
+[data-theme="dark"] {
+  .tips {
+    color: white;
+    background-color: $darkThemePrimaryBackgroundColor;
+  }
+}

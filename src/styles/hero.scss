@@ -19,10 +19,12 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   background-position: center;
   background-size: cover;
-  height: 750px !important;
+  height: 700px !important;
   position: relative;
 
   .cover {
+    text-align: center;
+
     @include until($tablet) {
       padding: 20px;
       left: 0;
@@ -36,14 +38,13 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: rgba(white, 0.8);
     opacity: 0;
     top: 50%;
-    padding: 100px;
-    left: 5vw;
+    padding: 80px;
+    left: 15vw;
+    right: 15vw;
     transform: translateY(120%);
     transition: all 0.4s ease;
     transition-delay: 0.7s;
     transform-origin: bottom;
-    width: 100%;
-    max-width: 600px;
     box-sizing: border-box;
 
     p {
@@ -51,15 +52,33 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transition-delay: 1s;
 
       &:first-child {
+        color: black;
+
         @include until($tablet) {
-          margin-bottom: 10px;
+          margin-bottom: 20px;
         }
 
-        margin-bottom: 15px;
+        margin-bottom: 35px;
       }
 
       &:nth-child(2) {
-        color: black;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 10%;
+          height: 2px;
+          background-color: $colorMain;
+          left: 0;
+          right: 0;
+          top: -20px;
+          margin: 0 auto;
+          transition: all 0.4s ease-in;
+
+          @include until($tablet) {
+            top: -10px;
+          }
+        }
       }
 
       @include until($tablet) {
@@ -94,10 +113,12 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: white;
 
     p {
-      color: $darkThemeTextColor;
+      &:first-child {
+        color: white;
+      }
 
       &:nth-child(2) {
-        color: white;
+        color: $darkThemeTextColor;
       }
     }
   }

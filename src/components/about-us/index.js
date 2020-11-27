@@ -8,7 +8,7 @@ const AboutUs = () => {
 
   return (
     <div id="about-us" className="about-us">
-      <div className="about-us-info px-6" data-aos="fade-up">
+      <div className="about-us-info p-6" data-aos="fade-up">
         <div>
           <div className="about-us-title is-size-3-desktop is-size-4-tablet is-size-4-mobile is-uppercase has-text-weight-semibold mb-6">
             {t("aboutUs.title")}

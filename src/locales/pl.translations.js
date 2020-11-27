@@ -1,24 +1,31 @@
 const translations = {
   navbar: {
     about: "o nas",
-    services: "usługi",
+    news: "aktualności",
     collections: "kolekcje",
     contact: "kontakt",
   },
   hero: {
-    winterCollection: {
-      title: "W sam raz na zime",
-      description: "Wpuść słońce w te krótkie i szare dni z zimową kolekcją",
-    },
-    summerCollection: {
-      title: "Uchroń się przed słońcem",
-      description: "Kiedy słońce mocno razi i potrzebujesz cienia",
-    },
-    autumnCollection: {
-      title: "Nie strać pięknych widoków jesienią",
-      description: "Nie przegapisz niczego w najpiekniejszej porze roku",
-    },
-    button: "Sprawdź teraz",
+    quotes: [
+      {
+        quote: '"Bo piękno na to jest, by zachwycało"',
+        author: "- Cyprian Kamil Norwid",
+      },
+      {
+        quote: '"Pięknem jest to, co samo przez się jest godne wyboru."',
+        author: "- Arystoteles",
+      },
+      {
+        quote:
+          '"Piękno rzeczy istnieje jedynie w umyśle tego, kto rzeczy te ogląda."',
+        author: "- David Hume",
+      },
+    ],
+  },
+  tips: {
+    colors: "Możliwość dostosowania kolorystyki tkanin",
+    quality: "Doskonała jakość",
+    settings: "Realizujemy zamówienia na nietypowe tkaniny",
   },
   aboutUs: {
     title: "Kim jesteśmy?",
@@ -27,41 +34,67 @@ const translations = {
     description2:
       "Od 2020 roku podążając za potrzebami rynku wprowadziliśmy również do naszej oferty filtry powietrza. Jest to dodatkowa działalność naszej firmy w której prężnie się rozwijamy.",
   },
+
   services: {
-    title: "Oferowane usługi",
+    title: "ADblind w liczbach",
     curtains: {
-      title: "Zasłony",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+      title: "sprzedanych tkanin",
     },
     blinds: {
-      title: "Rolety",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+      title: "produktów w ofercie",
+    },
+    something: {
+      title: "zadowolonych klientów",
     },
   },
 
   collections: {
     title: "Nasze kolekcje",
+    button: "Kontakt",
     menu: {
-      all: "Wszystkie",
-      wood: "Wood",
-      natural: "Natural",
-      examples: "Przykłady",
+      dayAndNight: "Dzień i noc",
+      dayAndNightWave: "Dzień i noc fala",
+      blackout: "Blackout",
     },
-    gallery: {
-      zoomIn: "Powiększ",
+    dayAndNight: {
+      description:
+        "Kolekcje składają się z tkanin jednobarwnych oraz wielobarwnych w bardzo szerokiej kolorystyce. Są to tkaniny naturalne, strukturalne oraz satynowe.",
+      contactDescription:
+        "Jeśli chcą Państwo poznać naszą Kolekcję Tkanin Dzień i Noc zapraszamy do kontaktu.",
     },
-    item: {
-      description: "Chłodne niebo",
-      thickness: "Grubość",
-      long: "Długość",
-      fabric: "Tkanina",
-      silk: "Jedwab",
+    dayAndNightWave: {
+      description:
+        "Kolekcja składa się z tkanin jednobarwnych o strukturze falistej. W porównaniu do zwykłej tkaniny dzień i noc umożliwia dodatkowe możliwości stopnia zaciemniania pomiędzy dzień i noc.",
+      contactDescription:
+        "Jeśli chcą Państwo poznać naszą Kolekcję Tkanin Dzień i Noc Fala zapraszamy do kontaktu.",
     },
+    balckout: {
+      description:
+        "Kolekcja tkanin zaciemniających to materiały cechujące się najwyższą europejską jakością oraz wzornictwem opartym na najnowszych światowych trendach.",
+      contactDescription:
+        "Jeśli chcą Państwo poznać naszą kolekcję tkanin zaciemniających zapraszamy do kontaktu.",
+    },
+  },
+  filters: {
+    title: "Filtry powietrza",
+    description1:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure illum id vitae, cupiditate ratione voluptatem nemo repudiandae? Quasi autem animi, et porro, exercitationem reprehenderit distinctio natus facere laboriosam adipisci tempore?",
+  },
+  news: {
+    title: "Aktualności",
   },
   contact: {
     title: "Kontakt",
+    name: "Imię",
+    phone: "Numer kontaktowy",
+    email: "Email",
+    subject: "Temat",
+    message: "Treść",
+    send: "Wyślij",
+    required: "To pole jest wymagane",
+    tooShort: "Treść tego pola jest za krótka",
+    wrongEmail: "Niepoprawny format email",
+    tooLong: "Treść tego pola jest za długa",
   },
 }
 

@@ -18,16 +18,12 @@ const Navigation = () => {
     i18n.changeLanguage(lang)
   }
 
-  const dupa = () => {
+  useEffect(() => {
     const element = document.getElementById(currentElement.name)
     window.scrollTo({
       top: element.offsetTop - currentElement.offset,
       behavior: "smooth",
     })
-  }
-
-  useEffect(() => {
-    dupa()
   }, [currentElement])
 
   const handleScroll = () => {
@@ -41,6 +37,12 @@ const Navigation = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
   }, [])
+
+  const hideMenu = () => {
+    if (isMenuOpened) {
+      setIsMenuOpened(false)
+    }
+  }
 
   return (
     <nav
@@ -56,8 +58,6 @@ const Navigation = () => {
               setCurrentElement({ name: "hero", offset: 150 })
             }}
           >
-            {/* <span className="is-size-3 has-text-weight-semibold">ADBLIND</span> */}
-
             <img src={logo} />
           </a>
 
@@ -83,42 +83,50 @@ const Navigation = () => {
               className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
               onClick={() => {
                 setCurrentElement({ name: "about-us", offset: 110 })
+                hideMenu()
               }}
             >
-              {t("navbar.about")}
+              <span>{t("navbar.about")}</span>
             </a>
-            <a
-              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-              onClick={() => {
-                setCurrentElement({ name: "services", offset: 110 })
-              }}
-            >
-              {t("navbar.services")}
-            </a>
+
             <a
               className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
               onClick={() => {
                 setCurrentElement({ name: "collections", offset: 110 })
+                hideMenu()
               }}
             >
-              {t("navbar.collections")}
+              <span>{t("navbar.collections")}</span>
             </a>
+
+            <a
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+              onClick={() => {
+                setCurrentElement({ name: "news", offset: 110 })
+                hideMenu()
+              }}
+            >
+              <span>{t("navbar.news")}</span>
+            </a>
+
             <a
               className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
               onClick={() => {
                 setCurrentElement({ name: "contact", offset: 110 })
+                hideMenu()
               }}
             >
-              {t("navbar.contact")}
+              <span>{t("navbar.contact")}</span>
             </a>
 
             <div
               className="navbar-item is-size-6 is-clickable"
               onClick={() => {
                 setIsDarkTheme(!isDarkTheme)
+                hideMenu()
               }}
             >
-              {isDarkTheme ? <FiSun /> : <FiMoon />}
+              <span>{isDarkTheme ? <FiSun /> : <FiMoon />}</span>
             </div>
 
             {i18n.language === "en" ? (
@@ -126,18 +134,20 @@ const Navigation = () => {
                 className="navbar-item is-size-6 is-clickable"
                 onClick={() => {
                   changeLanguage("pl")
+                  hideMenu()
                 }}
               >
-                PL
+                <span>PL</span>
               </div>
             ) : (
               <div
                 className="navbar-item is-size-6 is-clickable"
                 onClick={() => {
                   changeLanguage("en")
+                  hideMenu()
                 }}
               >
-                EN
+                <span>EN</span>
               </div>
             )}
           </div>

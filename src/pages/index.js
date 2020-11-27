@@ -9,15 +9,21 @@ import { OurCollections } from "components/our-collections"
 import { Contact } from "components/contact"
 import { ContactUs } from "components/contact-us"
 import { Banner } from "components/banner"
+import { Filters } from "components/filters"
+import { News } from "components/news"
+import { Tips } from "components/tips"
 
 export default function Home() {
   return (
     <Layout>
       <Hero />
+      <Tips />
       <AboutUs />
+      {/* <OurCollections /> */}
       <Services />
-      <OurCollections />
       <Collections />
+      <Filters />
+      <News />
       <Contact />
       <Banner />
       {/* <ContactUs /> */}

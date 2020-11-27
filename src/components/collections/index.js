@@ -1,276 +1,58 @@
 import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
-import ImageViewer from "react-simple-image-viewer"
 
-import W1 from "./assets/seriawood/1.jpg"
-import W2 from "./assets/seriawood/2.jpg"
-import W3 from "./assets/seriawood/3.jpg"
-import W4 from "./assets/seriawood/4.jpg"
-import W5 from "./assets/seriawood/5.jpg"
-import W6 from "./assets/seriawood/6.jpg"
-import W7 from "./assets/seriawood/7.jpg"
-import W8 from "./assets/seriawood/8.jpg"
-import W9 from "./assets/seriawood/9.jpg"
-import W10 from "./assets/seriawood/10.jpg"
+import DN1 from "./assets/day-and-night/1.jpg"
+import DN2 from "./assets/day-and-night/2.jpg"
+import DN3 from "./assets/day-and-night/3.jpg"
+import DN4 from "./assets/day-and-night/4.jpg"
+import DN5 from "./assets/day-and-night/5.jpg"
 
-import N1 from "./assets/serianatural/1.jpg"
-import N2 from "./assets/serianatural/2.jpg"
-import N3 from "./assets/serianatural/3.jpg"
-import N4 from "./assets/serianatural/4.jpg"
-import N5 from "./assets/serianatural/5.jpg"
-import N6 from "./assets/serianatural/6.jpg"
-import N7 from "./assets/serianatural/7.jpg"
-import N8 from "./assets/serianatural/8.jpg"
-import N9 from "./assets/serianatural/9.jpg"
-import N10 from "./assets/serianatural/10.jpg"
-import N11 from "./assets/serianatural/11.jpg"
-import N12 from "./assets/serianatural/12.jpg"
+import DNW1 from "./assets/day-and-night-wave/1.jpg"
+import DNW2 from "./assets/day-and-night-wave/2.jpg"
+import DNW3 from "./assets/day-and-night-wave/3.jpg"
+import DNW4 from "./assets/day-and-night-wave/4.jpg"
+import DNW5 from "./assets/day-and-night-wave/5.jpg"
 
-import E1 from "./assets/examples/1.jpg"
-import E2 from "./assets/examples/2.jpg"
-import E3 from "./assets/examples/3.jpg"
-import E4 from "./assets/examples/4.jpg"
-import E5 from "./assets/examples/5.jpg"
-import E6 from "./assets/examples/6.jpg"
+import B1 from "./assets/blackout/1.jpg"
+import B2 from "./assets/blackout/2.jpg"
+import B3 from "./assets/blackout/3.jpg"
+import B4 from "./assets/blackout/4.jpg"
+import B5 from "./assets/blackout/5.jpg"
 
 const Collections = () => {
   const { t } = useTranslation()
-  const [currentType, setCurrentType] = useState("all")
-  const [activeGallery, setActiveGallery] = useState([])
-  const [imagesArray, setImagesArray] = useState([])
-  const [visible, setVisible] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const data = [
-    {
-      src: W1,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
+  const data = {
+    dayAndNight: {
+      description: t("collections.dayAndNight.description"),
+      contactDescription: t("collections.dayAndNight.contactDescription"),
+      images: [DN1, DN2, DN3, DN4, DN5],
     },
-    {
-      src: W2,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
+    dayAndNightWave: {
+      description: t("collections.dayAndNightWave.description"),
+      contactDescription: t("collections.dayAndNightWave.contactDescription"),
+      images: [DNW5, DNW2, DNW3, DNW4, DNW1],
     },
-    {
-      src: W3,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
+    balckout: {
+      description: t("collections.balckout.description"),
+      contactDescription: t("collections.balckout.contactDescription"),
+      images: [B5, B2, B3, B4, B1],
     },
-    {
-      src: W4,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: W5,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: W6,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: W7,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: W8,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: W9,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: W10,
-      description: t("collections.item.description"),
-      type: ["all", "wood"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N1,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N2,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N3,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N4,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N5,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N6,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N7,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N8,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N9,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N10,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N11,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: N12,
-      description: t("collections.item.description"),
-      type: ["all", "natural"],
-      info1: "2mm",
-      info2: "20m",
-      info3: t("collections.item.silk"),
-    },
-    {
-      src: E1,
-      description: t("collections.item.description"),
-      type: ["all", "example"],
-    },
-    {
-      src: E2,
-      description: t("collections.item.description"),
-      type: ["all", "example"],
-    },
-    {
-      src: E3,
-      description: t("collections.item.description"),
-      type: ["all", "example"],
-    },
-    {
-      src: E4,
-      description: t("collections.item.description"),
-      type: ["all", "example"],
-    },
-    {
-      src: E5,
-      description: t("collections.item.description"),
-      type: ["all", "example"],
-    },
-    {
-      src: E6,
-      description: t("collections.item.description"),
-      type: ["all", "example"],
-    },
-  ]
+  }
 
-  const getImagesStrings = type =>
-    data
-      .map(item => {
-        if (item.type.includes(type)) {
-          return item.src
-        }
-      })
-      .filter(Boolean)
-
-  const filterImages = type => data.filter(item => item.type.includes(type))
-
-  const getAnimationDelay = index => index * 30
+  const initialCollection = "dayAndNight"
+  const [currentType, setCurrentType] = useState(initialCollection)
+  const [currentColection, setCurrentCollection] = useState(
+    data[initialCollection]
+  )
 
   useEffect(() => {
-    setActiveGallery(filterImages(currentType))
-    setImagesArray(getImagesStrings(currentType))
+    setCurrentCollection(data[currentType])
   }, [currentType])
 
   return (
-    <div id="collections" className="collections px-6">
-      <div className="container">
+    <div id="collections" className="collections p-6">
+      <div>
         <div className="collections-titles">
           <p
             className="collections-title is-uppercase has-text-weight-semibold is-size-3-desktop is-size-4-tablet is-size-4-mobile mb-6"
@@ -281,131 +63,90 @@ const Collections = () => {
           <div></div>
         </div>
 
-        <div className="collections-menu" data-aos="fade-up">
-          <div
-            className={`has-text-weight-semibold is-size-6 ${
-              currentType === "all" ? "is-active" : ""
-            }`}
-          >
+        <div className="collections-menu is-uppercase" data-aos="fade-up">
+          <div className="has-text-weight-semibold is-size-6">
             <span
+              className={`${currentType === "dayAndNight" ? "is-active" : ""}`}
               onClick={() => {
-                setCurrentType("all")
+                setCurrentType("dayAndNight")
               }}
             >
-              {t("collections.menu.all")}
+              {t("collections.menu.dayAndNight")}
             </span>
           </div>
-          <div
-            className={`has-text-weight-semibold is-size-6 ${
-              currentType === "wood" ? "is-active" : ""
-            }`}
-          >
+          <div className="has-text-weight-semibold is-size-6">
             <span
+              className={`${
+                currentType === "dayAndNightWave" ? "is-active" : ""
+              }`}
               onClick={() => {
-                setCurrentType("wood")
+                setCurrentType("dayAndNightWave")
               }}
             >
-              {t("collections.menu.wood")}
+              {t("collections.menu.dayAndNightWave")}
             </span>
           </div>
-          <div
-            className={`has-text-weight-semibold is-size-6 ${
-              currentType === "natural" ? "is-active" : ""
-            }`}
-          >
+          <div className="has-text-weight-semibold is-size-6">
             <span
+              className={`${currentType === "balckout" ? "is-active" : ""}`}
               onClick={() => {
-                setCurrentType("natural")
+                setCurrentType("balckout")
               }}
             >
-              {t("collections.menu.natural")}{" "}
-            </span>
-          </div>
-          <div
-            className={`has-text-weight-semibold is-size-6 ${
-              currentType === "example" ? "is-active" : ""
-            }`}
-          >
-            <span
-              onClick={() => {
-                setCurrentType("example")
-              }}
-            >
-              {t("collections.menu.examples")}{" "}
+              {t("collections.menu.blackout")}{" "}
             </span>
           </div>
         </div>
 
-        <div className="collections-gallery mt-6">
-          <div className="columns is-multiline">
-            {activeGallery.map((item, index) => (
-              <div className="column collections-item is-3-desktop is-6-tablet is-12-mobile pb-5">
-                <div style={{ overflow: "hidden", position: "relative" }}>
-                  <div
-                    aria-haspopup="true"
-                    data-aos-delay={getAnimationDelay(index)}
-                    data-aos="fade-up"
-                    style={{
-                      background: `center / cover no-repeat url(${item.src})`,
-                      height: "400px",
-                    }}
-                  ></div>
-                  <div className="collections-overlay">
-                    <p className="collections-overlay-title is-size-6-desktop is-size-6-tablet is-size-6-mobile is-uppercase has-text-weight-semibold">
-                      {t(item.description)}
-                    </p>
-                    {item.info1 && item.info2 && item.info3 && (
-                      <div className="collections-overlay-details">
-                        <div className="is-size-7">
-                          <p className="m-0">
-                            {`${t("collections.item.thickness")}:`}
-                          </p>
-                          <p className="m-0 has-text-weight-semibold">
-                            {`${item.info1}`}
-                          </p>
-                        </div>
-                        <div className="is-size-7">
-                          <p className="m-0">{`${t(
-                            "collections.item.long"
-                          )}:`}</p>
-                          <p className="m-0 has-text-weight-semibold">
-                            {`${item.info2}`}
-                          </p>
-                        </div>
-                        <div className="is-size-7">
-                          <p className="m-0">
-                            {`${t("collections.item.fabric")}:`}
-                          </p>
-                          <p className="m-0 has-text-weight-semibold">
-                            {`${item.info3}`}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                    <button
-                      onClick={() => {
-                        setCurrentIndex(index)
-                        setVisible(true)
-                      }}
-                      className="button is-primary is-uppercase"
-                    >
-                      {t("collections.gallery.zoomIn")}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <div
+          className="collections-description has-text-centered is-size-5"
+          data-aos="fade-up"
+        >
+          {currentColection.description}
+        </div>
 
-            {visible && (
-              <ImageViewer
-                src={imagesArray}
-                currentIndex={currentIndex}
-                onClose={() => {
-                  setCurrentIndex(0)
-                  setVisible(false)
-                }}
-              />
-            )}
+        <div className="collections-gallery" data-aos="fade-up">
+          <div className="collections-gallery-grid">
+            <div
+              style={{
+                backgroundImage: `url(${currentColection.images[0]})`,
+              }}
+            ></div>
+            <div
+              style={{
+                backgroundImage: `url(${currentColection.images[1]})`,
+              }}
+            ></div>
+            <div
+              style={{
+                backgroundImage: `url(${currentColection.images[2]})`,
+              }}
+            ></div>
+            <div
+              style={{
+                backgroundImage: `url(${currentColection.images[3]})`,
+              }}
+            ></div>
+          </div>
+          <div className="collections-gallery-hero">
+            <div
+              style={{
+                backgroundImage: `url(${currentColection.images[4]})`,
+              }}
+            ></div>
+          </div>
+        </div>
+
+        <div
+          className="collections-contact-description has-text-centered is-size-5"
+          data-aos="fade-up"
+        >
+          {currentColection.contactDescription}
+
+          <div className="mt-6">
+            <a className="button is-primary is-uppercase" href="#contact">
+              {t("collections.button")}
+            </a>
           </div>
         </div>
       </div>

@@ -1,25 +1,30 @@
 const translations = {
   navbar: {
     about: "about us",
-    services: "services",
+    news: "news",
     collections: "collections",
     contact: "contact",
   },
   hero: {
-    winterCollection: {
-      title: "Perfect for winter",
-      description: "Let sunrays into your room with winter collection",
-    },
-    summerCollection: {
-      title: "Get some cover",
-      description: "When sun is too bright and some shade is needed",
-    },
-    autumnCollection: {
-      title: "Colors of autumn",
-      description:
-        "Let your window be your new tv with wonderfull autumn collection",
-    },
-    button: "check it now",
+    quotes: [
+      {
+        quote: '"Everything has beauty, but not everyone sees it."',
+        author: "- Confucius",
+      },
+      {
+        quote: '"Think of all the beauty still left around you and be happy."',
+        author: "- Anne Frank ",
+      },
+      {
+        quote: '"A thing of beauty is a joy forever."',
+        author: "- John Keats",
+      },
+    ],
+  },
+  tips: {
+    colors: "Posibillity to adjust coloring of the fabric",
+    quality: "Excellent quality",
+    settings: "Fullfill non-typical fabric orders",
   },
   aboutUs: {
     title: "Who we are?",
@@ -28,45 +33,69 @@ const translations = {
     description2:
       "From year 2020 by following brand new trends and needs we added to our offer air filters. It is another activity loop which we are currently dynamically develop.",
   },
+
   services: {
-    title: "Our services",
+    title: "adblind numbers",
     something: {
-      title: "Curtains",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+      title: "selled fabrics",
     },
     curtains: {
-      title: "Curtains",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+      title: "offered manufactures",
     },
     blinds: {
-      title: "Blinds",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum perspiciatis incidunt consequatur accusamus amet officiis.",
+      title: "satisfied clients",
     },
   },
+
   collections: {
     title: "Our collections",
     menu: {
-      all: "All",
-      wood: "Wood",
-      natural: "Natural",
-      examples: "Examples",
+      dayAndNight: "Day and night",
+      dayAndNightWave: "Day and night wave",
+      blackout: "Blackout",
     },
-    gallery: {
-      zoomIn: "Zoom in",
+    dayAndNight: {
+      description:
+        "The collections consist of single-color and multi-colored fabrics in a very wide range of colors. These are natural, structural and satin fabrics.",
+      contactDescription:
+        "If you want to know some details about our Day and Night Fabric Collection, please contact us.",
     },
-    item: {
-      description: "Collingwood Residence",
-      thickness: "Thickness",
-      long: "Long",
-      fabric: "Fabric",
-      silk: "Silk",
+    dayAndNightWave: {
+      description:
+        "The collection consists of single-color fabrics with a wavy structure. Compared to a standard fabric day and night, it offers additional options for darkening between day and night.",
+      contactDescription:
+        "If you want to know some details about our Day and Night Wave Fabric Collection, please contact us.",
     },
+    balckout: {
+      description:
+        "The collection of blackout fabrics are materials characterized by the highest European quality and designs based on the latest global trends.",
+      contactDescription:
+        "If you want to know some details about our Blackout Fabric Collection, please contact us.",
+    },
+    button: "Contact",
+  },
+
+  filters: {
+    title: "Air filters",
+    description1:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure illum id vitae, cupiditate ratione voluptatem nemo repudiandae? Quasi autem animi, et porro, exercitationem reprehenderit distinctio natus facere laboriosam adipisci tempore?",
+  },
+
+  news: {
+    title: "News",
   },
   contact: {
     title: "Contact us",
+    name: "Name",
+    phone: "Phone",
+    email: "Email",
+    subject: "Subject",
+    message: "Treść",
+    send: "Send",
+    required: "This field is required",
+    tooShort: "This field is too short",
+    wrongEmail: "Wrong email format",
+    tooLong: "This field is too long",
   },
 }
 

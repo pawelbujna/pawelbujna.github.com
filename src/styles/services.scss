@@ -1,5 +1,4 @@
 .services {
-  padding: 40px 0;
   background-color: $primaryBackgroundColor;
 
   @include until($widescreen) {
@@ -50,10 +49,19 @@
       flex-basis: 300px;
     }
 
-    &-title {
+    @include until($desktop) {
+      flex-basis: auto;
+    }
+
+    &-counter {
       color: black;
+    }
+
+    &-title {
+      color: $primaryTextColor;
       position: relative;
       display: inline-block;
+      margin-top: 30px;
 
       &:after {
         content: "";
@@ -63,7 +71,7 @@
         background-color: $colorMain;
         left: 0;
         right: 0;
-        bottom: -15px;
+        top: -20px;
         margin: 0 auto;
         transition: all 0.4s ease-in;
       }
@@ -94,8 +102,16 @@
     &-card {
       background-color: $darkThemeSecondaryBackgroundColor;
 
-      &-title {
+      &-counter {
         color: white;
+      }
+
+      &-title {
+        color: $darkThemeTextColor;
+
+        &:after {
+          // background-color: $darkThemeTextColor;
+        }
       }
 
       &-description {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { useTranslation } from "react-i18next"
 
 import collections from "./assets/collections.jpg"
@@ -22,7 +22,7 @@ const OurCollections = () => {
 
       <div className="container">
         <div className="collections-image">
-          <a href={collections} target="_blank">
+          <a href={collections} target="_blank" rel="noreferrer">
             <img src={collections} />
           </a>
         </div>

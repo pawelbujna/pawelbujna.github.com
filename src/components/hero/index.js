@@ -19,18 +19,18 @@ const Hero = () => {
   const data = [
     {
       image: hero3,
-      title: t("hero.winterCollection.title"),
-      description: t("hero.winterCollection.description"),
+      title: t("hero.quotes.0.quote"),
+      description: t("hero.quotes.0.author"),
     },
     {
       image: hero7,
-      title: t("hero.summerCollection.title"),
-      description: t("hero.winterCollection.description"),
+      title: t("hero.quotes.1.quote"),
+      description: t("hero.quotes.1.author"),
     },
     {
       image: hero2,
-      title: t("hero.autumnCollection.title"),
-      description: t("hero.autumnCollection.description"),
+      title: t("hero.quotes.2.quote"),
+      description: t("hero.quotes.2.author"),
     },
   ]
 
@@ -41,7 +41,7 @@ const Hero = () => {
       coverflowEffect={{ rotate: 50 }}
       direction="horizontal"
       autoplay={{
-        delay: 10000,
+        delay: 5000,
       }}
       pagination={{
         clickable: true,
@@ -62,15 +62,15 @@ const Hero = () => {
           }}
         >
           <div className="cover">
-            <p className="is-size-5-desktop is-size-6-tablet is-size-7-mobile is-uppercase">
-              {item.description}
-            </p>
-            <p className="is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-weight-semibold is-uppercase">
+            <p className="is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-weight-light">
               {item.title}
             </p>
-            <a className="button is-primary is-uppercase" href="#collections">
+            <p className="is-size-5-desktop is-size-6-tablet is-size-7-mobile m-0">
+              {item.description}
+            </p>
+            {/* <a className="button is-primary is-uppercase" href="#collections">
               {t("hero.button")}
-            </a>
+            </a> */}
           </div>
         </SwiperSlide>
       ))}

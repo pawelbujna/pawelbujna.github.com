@@ -1,6 +1,5 @@
 .contact {
-  padding: 40px 0;
-  background-color: $primaryBackgroundColor;
+  // background-color: $primaryBackgroundColor;
 
   @include until($widescreen) {
     padding: 70px;
@@ -8,11 +7,20 @@
 
   &-icon {
     stroke: $colorMain;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     svg {
-      width: 60px;
-      height: 60px;
+      width: 30px;
+      height: 30px;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin-left: 10px;
+      }
     }
   }
 
@@ -34,31 +42,69 @@
 
   &-card {
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
+    padding: 10px;
+    padding-left: 100px;
+    padding-top: 30px;
 
     @include until($widescreen) {
-      padding: 20px;
+      padding: 5px;
+    }
+
+    @include until($tablet) {
+      padding-top: 50px;
     }
 
     a {
       color: black;
       transition: 0.4s ease color;
+      margin-left: 40px;
 
       &:hover {
         color: $colorMain;
       }
     }
   }
+
+  .input {
+    margin-bottom: 15px;
+    position: relative;
+    height: 60px;
+
+    &::placeholder {
+      color: $primaryTextColor;
+    }
+  }
+
+  .column {
+    padding-bottom: 0;
+  }
+
+  .columns {
+    margin-bottom: 0;
+  }
+
+  .help {
+    position: absolute;
+    bottom: -5px;
+  }
+
+  &-textarea {
+    margin-top: 0;
+  }
+
+  &-info {
+    flex-direction: column;
+  }
+
+  &-submit {
+    text-align: right;
+  }
 }
 
 [data-theme="dark"] {
   .contact {
     color: white;
-    background-color: $darkThemePrimaryBackgroundColor;
+    // background-color: $darkThemePrimaryBackgroundColor;
 
     &-title {
       color: white;

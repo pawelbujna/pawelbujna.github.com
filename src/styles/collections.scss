@@ -1,5 +1,5 @@
 .collections {
-  padding: 40px 0;
+  background-color: $darkThemeSecondaryBackgroundColor;
 
   @include until($widescreen) {
     padding: 70px;
@@ -15,14 +15,14 @@
   }
 
   &-title {
-    color: black;
+    color: white;
     position: relative;
 
     @include underscore;
   }
 
   &-menu {
-    color: black;
+    color: white;
     display: flex;
     justify-content: center;
 
@@ -37,91 +37,70 @@
 
       span {
         transition: 0.4s ease color;
+        position: relative;
+
+        @include hover-underscore;
 
         @include until($desktop) {
-          padding: 10px 10px;
+          margin: 10px 10px;
         }
 
         cursor: pointer;
-        padding: 50px 20px;
-
-        &:hover {
-          color: $colorMain;
-        }
-      }
-
-      &.is-active {
-        span {
-          color: $colorMain;
-        }
+        margin: 50px 20px;
       }
     }
   }
 
-  &-overlay {
-    margin: 20px;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(white, 0.8);
-    text-align: center;
-    transform: translateY(80%);
-    opacity: 0;
-    transition: all 0.4s ease;
+  &-description,
+  &-contact-description {
+    padding: 80px 0;
+    width: 50%;
+    margin: 0 auto;
+    color: white;
 
-    p {
-      position: relative;
-      margin-bottom: 15px;
+    @include until($desktop) {
+      width: 75%;
     }
 
-    .button {
-      border-radius: 0 !important;
-      margin-top: 20px;
-      margin-bottom: 5px;
+    @include until($tablet) {
+      width: 90%;
     }
+  }
 
-    &-title {
-      position: relative;
-      padding-bottom: 15px;
-      color: black;
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        width: 30%;
-        margin: 0 auto;
-        background-color: $colorMain;
-      }
-    }
+  &-contact-description {
+    padding-bottom: 0;
+  }
 
-    &-details {
+  &-gallery {
+    height: 700px;
+    display: flex;
+
+    & > div {
+      flex: 1;
       display: flex;
-      text-align: center;
+      flex-wrap: wrap;
+    }
 
+    @include until($desktop) {
+      flex-direction: column;
+    }
+
+    &-grid {
       & > div {
-        flex: 1;
-
-        & > p:nth-child(2) {
-          color: black;
-        }
+        flex-basis: 50%;
+        height: auto;
+        background-size: cover;
+        display: block;
+        background-position: center top;
       }
     }
-  }
 
-  &-item {
-    position: relative;
-    cursor: pointer;
-
-    &:hover,
-    &:active {
-      .collections-overlay {
-        transform: translateY(0);
-        opacity: 1;
+    &-hero {
+      & > div {
+        flex-basis: 100%;
+        height: auto;
+        background-size: cover;
+        background-position: center top;
       }
     }
   }
@@ -129,29 +108,19 @@
 
 [data-theme="dark"] {
   .collections {
+    background-color: white;
+
     &-title {
-      color: white;
+      color: black;
     }
 
     &-menu {
-      color: white;
+      color: black;
     }
 
-    &-overlay {
-      background-color: rgba(black, 0.8);
-
-      &-title {
-        color: white;
-      }
-
-      &-details {
-        & > div {
-          color: $darkThemeTextColor;
-          & > p:nth-child(2) {
-            color: white;
-          }
-        }
-      }
+    &-description,
+    &-contact-description {
+      color: black;
     }
   }
 }

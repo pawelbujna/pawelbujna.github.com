@@ -1,18 +1,16 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
 
-const { CMS_URL } = process.env
-
 const Card = ({ item }) => {
   const {
     i18n: { language },
   } = useTranslation()
 
   return (
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img src={CMS_URL + item.image[0].url} />
+          <img src={item.image.publicURL} />
         </figure>
       </div>
 

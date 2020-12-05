@@ -1,4 +1,4 @@
-.contact {
+.no-form-contact {
   // background-color: $primaryBackgroundColor;
 
   @include until($widescreen) {
@@ -40,6 +40,15 @@
     @include underscore;
   }
 
+  &-info {
+    display: flex;
+    justify-content: center;
+
+    @include until($tablet) {
+      flex-direction: column;
+    }
+  }
+
   &-card {
     background-color: white;
     padding: 10px;
@@ -64,51 +73,11 @@
       }
     }
   }
-
-  .input {
-    margin-bottom: 15px;
-    position: relative;
-    height: 60px;
-
-    &::placeholder {
-      color: $primaryTextColor;
-    }
-  }
-
-  textarea.input {
-    height: auto;
-  }
-
-  .column {
-    padding-bottom: 0;
-  }
-
-  .columns {
-    margin-bottom: 0;
-  }
-
-  .help {
-    position: absolute;
-    bottom: -5px;
-  }
-
-  &-textarea {
-    margin-top: 0;
-  }
-
-  &-info {
-    flex-direction: column;
-  }
-
-  &-submit {
-    text-align: right;
-  }
 }
 
 [data-theme="dark"] {
-  .contact {
+  .no-form-contact {
     color: white;
-    // background-color: $darkThemePrimaryBackgroundColor;
 
     &-title {
       color: white;

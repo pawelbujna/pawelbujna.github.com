@@ -5,9 +5,12 @@ import * as Yup from "yup"
 import useSSR from "use-ssr"
 import Recaptcha from "react-recaptcha"
 
+const { CMS_URL } = process.env
+
 const Contact = () => {
   const { t } = useTranslation()
   const [isVerified, setIsVerified] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
   const { isBrowser } = useSSR()
 
   const contactSchema = Yup.object().shape({
@@ -31,6 +34,20 @@ const Contact = () => {
       .required(t("contact.required")),
   })
 
+  const submitForm = (data, { resetForm }) => {
+    fetch(`${CMS_URL}/messages`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...data }),
+    }).then(() => {
+      setIsSuccess(true)
+      resetForm()
+    })
+  }
+
   return (
     <div id="contact" className="contact p-6">
       <div className="container">
@@ -44,6 +61,24 @@ const Contact = () => {
           <div></div>
         </div>
 
+        {isSuccess && (
+          <div className="contact-success my-6">
+            <p>
+              {t("contact.emailSentSuccess")}
+              <br />
+              <button
+                className="button is-small"
+                onClick={() => {
+                  setIsSuccess(false)
+                  setIsVerified(true)
+                }}
+              >
+                {t("contact.close")}
+              </button>
+            </p>
+          </div>
+        )}
+
         <div className="columns contact-form">
           <div className="column is-8">
             <Formik
@@ -55,7 +90,7 @@ const Contact = () => {
                 message: "",
               }}
               validationSchema={contactSchema}
-              onSubmit={console.log}
+              onSubmit={submitForm}
             >
               {({ errors, touched }) => (
                 <Form>
@@ -260,6 +295,7 @@ const Contact = () => {
                   className="is-size-6-desktop"
                   href="https://www.facebook.com/AdBlind-642400769246086"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   /AdBlind
                 </a>

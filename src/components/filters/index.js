@@ -1,5 +1,6 @@
 import React from "react"
 import Filters1 from "./assets/filters-1.jpg"
+import classification from "./assets/classification.jpg"
 
 import { useTranslation } from "react-i18next"
 
@@ -14,6 +15,13 @@ const Filters = () => {
             {t("filters.title")}
           </div>
           <p>{t("filters.description1")}</p>
+          <a
+            className="button is-primary mt-5"
+            href={classification}
+            target="_blank"
+          >
+            {t("filters.button")}
+          </a>
         </div>
       </div>
       <div
@@ -22,6 +30,7 @@ const Filters = () => {
         style={{
           backgroundImage: `url(${Filters1})`,
           backgroundSize: "cover",
+          backgroundPosition: "top 20% center",
         }}
       ></div>
     </div>

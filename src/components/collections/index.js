@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 
-import DN1 from "./assets/day-and-night/1.jpg"
-import DN2 from "./assets/day-and-night/2.jpg"
-import DN3 from "./assets/day-and-night/3.jpg"
-import DN4 from "./assets/day-and-night/4.jpg"
-import DN5 from "./assets/day-and-night/5.jpg"
+import DN1 from "./assets/day-and-night/1.webp"
+import DN2 from "./assets/day-and-night/2.webp"
+import DN3 from "./assets/day-and-night/3.webp"
+import DN4 from "./assets/day-and-night/4.webp"
+import DN5 from "./assets/day-and-night/5.webp"
 
-import DNW1 from "./assets/day-and-night-wave/1.jpg"
-import DNW2 from "./assets/day-and-night-wave/2.jpg"
-import DNW3 from "./assets/day-and-night-wave/3.jpg"
-import DNW4 from "./assets/day-and-night-wave/4.jpg"
-import DNW5 from "./assets/day-and-night-wave/5.jpg"
+import DNW1 from "./assets/day-and-night-wave/1.webp"
+import DNW2 from "./assets/day-and-night-wave/2.webp"
+import DNW3 from "./assets/day-and-night-wave/3.webp"
+import DNW4 from "./assets/day-and-night-wave/4.webp"
+import DNW5 from "./assets/day-and-night-wave/5.webp"
 
-import B1 from "./assets/blackout/1.jpg"
-import B2 from "./assets/blackout/2.jpg"
-import B3 from "./assets/blackout/3.jpg"
-import B4 from "./assets/blackout/4.jpg"
-import B5 from "./assets/blackout/5.jpg"
+import B1 from "./assets/blackout/1.webp"
+import B2 from "./assets/blackout/2.webp"
+import B3 from "./assets/blackout/3.webp"
+import B4 from "./assets/blackout/4.webp"
+import B5 from "./assets/blackout/5.webp"
 
 const Collections = () => {
   const { t } = useTranslation()

@@ -90,6 +90,7 @@ const ContactUs = () => {
               className="is-size-5-desktop"
               href="https://www.facebook.com/AdBlind-642400769246086"
               target="_blank"
+              rel="noreferrer"
             >
               /AdBlind
             </a>

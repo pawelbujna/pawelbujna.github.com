@@ -17,7 +17,7 @@ const News = () => {
             description_en
             date
             image {
-              url
+              publicURL
             }
           }
         }
@@ -40,10 +40,8 @@ const News = () => {
 
         <div className="columns">
           {data.allStrapiNews.edges.map(item => (
-            <div className="column">
-              <div data-aos="fade-up">
-                <Card item={item.node} />
-              </div>
+            <div className="column" key={item.node.title}>
+              <Card item={item.node} />
             </div>
           ))}
         </div>

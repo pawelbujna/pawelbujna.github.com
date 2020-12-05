@@ -78,7 +78,8 @@ const translations = {
   filters: {
     title: "Air filters",
     description1:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure illum id vitae, cupiditate ratione voluptatem nemo repudiandae? Quasi autem animi, et porro, exercitationem reprehenderit distinctio natus facere laboriosam adipisci tempore?",
+      "We also specialize in sale of filters class F7 and F9 as wall as H11-H14 Hepa filters",
+    button: "Classification potential",
   },
 
   news: {
@@ -96,6 +97,8 @@ const translations = {
     tooShort: "This field is too short",
     wrongEmail: "Wrong email format",
     tooLong: "This field is too long",
+    emailSentSuccess: "Email has been sent",
+    close: "Close",
   },
 }
 

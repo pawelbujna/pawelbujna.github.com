@@ -1,5 +1,5 @@
 import React from "react"
-import AboutUs1 from "./assets/about-us-1.jpg"
+import AboutUs1 from "./assets/about-us-1.webp"
 
 import { useTranslation } from "react-i18next"
 

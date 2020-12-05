@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 import { useTranslation } from "react-i18next"
 
-import hero2 from "./assets/hero-2.jpg"
-import hero3 from "./assets/hero-3.jpg"
-import hero7 from "./assets/hero-7.jpg"
+import hero2 from "./assets/hero-2.webp"
+import hero3 from "./assets/hero-3.webp"
+import hero7 from "./assets/hero-7.webp"
 
 import "swiper/swiper.scss"
 import styles from "swiper/components/pagination/pagination.scss"

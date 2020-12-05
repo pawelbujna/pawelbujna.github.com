@@ -1,5 +1,5 @@
 import React from "react"
-import ContactUs1 from "./assets/contact-us-1.jpg"
+import ContactUs1 from "./assets/contact-us-1.webp"
 
 const Banner = () => {
   return (

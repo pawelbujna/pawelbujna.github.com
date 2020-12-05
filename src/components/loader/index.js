@@ -1,5 +1,4 @@
-import React, { useContext } from "react"
-import { ThemeContext } from "../themeContext"
+import React from "react"
 
 const Loader = ({ isAnimating }) => {
   return (

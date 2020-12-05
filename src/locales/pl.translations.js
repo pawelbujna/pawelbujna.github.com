@@ -4,6 +4,7 @@ const translations = {
     news: "aktualności",
     collections: "kolekcje",
     contact: "kontakt",
+    work: "praca",
   },
   hero: {
     quotes: [
@@ -78,7 +79,8 @@ const translations = {
   filters: {
     title: "Filtry powietrza",
     description1:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure illum id vitae, cupiditate ratione voluptatem nemo repudiandae? Quasi autem animi, et porro, exercitationem reprehenderit distinctio natus facere laboriosam adipisci tempore?",
+      "Obecnie specjalizujemy się w sprzedaży filtrów klasy F7 i F9 oraz filtrów Hepa H11-H14.",
+    button: "Klasyfikacja możliwości",
   },
   news: {
     title: "Aktualności",
@@ -95,6 +97,8 @@ const translations = {
     tooShort: "Treść tego pola jest za krótka",
     wrongEmail: "Niepoprawny format email",
     tooLong: "Treść tego pola jest za długa",
+    emailSentSuccess: "Wiadomość została wysłana",
+    close: "Zamknij",
   },
 }
 

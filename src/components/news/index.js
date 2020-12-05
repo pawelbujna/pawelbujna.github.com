@@ -17,7 +17,11 @@ const News = () => {
             description_en
             date
             image {
-              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1080) {
+                  src
+                }
+              }
             }
           }
         }

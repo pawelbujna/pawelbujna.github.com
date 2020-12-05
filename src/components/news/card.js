@@ -10,7 +10,7 @@ const Card = ({ item }) => {
     <div class="card" data-aos="fade-up">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img src={item.image.publicURL} />
+          <img src={item.image.childImageSharp.fluid.src} />
         </figure>
       </div>
 

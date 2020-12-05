@@ -5,7 +5,7 @@ import { FiSun, FiMoon } from "react-icons/fi"
 import { Link } from "gatsby"
 import logo from "./logo.png"
 
-const Navigation = () => {
+const Navigation = ({ location }) => {
   const { t, i18n } = useTranslation()
   const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext)
   const [isMenuOpened, setIsMenuOpened] = useState(false)
@@ -53,7 +53,7 @@ const Navigation = () => {
     >
       <div className="container">
         <div className="navbar-brand">
-          {window.location.pathName === "/" ? (
+          {location.pathname === "/" ? (
             <a
               className="navbar-item logo"
               onClick={() => {
@@ -86,7 +86,7 @@ const Navigation = () => {
 
         <div className={`navbar-menu ${isMenuOpened ? "is-active" : ""}`}>
           <div className="navbar-end">
-            {window.location.pathname === "/" ? (
+            {location.pathname === "/" ? (
               <>
                 <a
                   className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
@@ -149,7 +149,7 @@ const Navigation = () => {
               <span>{isDarkTheme ? <FiSun /> : <FiMoon />}</span>
             </div>
 
-            {window.location.pathname === "/" && (
+            {location.pathname === "/" && (
               <>
                 {i18n.language === "en" ? (
                   <div

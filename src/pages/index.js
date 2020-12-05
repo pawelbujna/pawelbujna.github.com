@@ -13,9 +13,9 @@ import { Filters } from "components/filters"
 import { News } from "components/news"
 import { Tips } from "components/tips"
 
-export default function Home() {
+export default function Home({ location } = { location: { pathname: "/" } }) {
   return (
-    <Layout>
+    <Layout location={location}>
       <Hero />
       <Tips />
       <AboutUs />

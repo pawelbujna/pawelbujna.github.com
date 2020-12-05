@@ -14,7 +14,7 @@ import "animate.css/animate.min.css"
 import "styles/index.scss"
 import "aos/dist/aos.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [isAnimating, setIsAnimating] = useState(true)
 
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
     <ThemeProvider>
       {isLoading && <Loader isAnimating={isAnimating} />}
       <SEO />
-      <Header />
+      <Header location={location} />
       <div id="page-wrap">
         <main>{children}</main>
         <footer>

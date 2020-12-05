@@ -2,10 +2,10 @@ import React from "react"
 
 import { Navigation } from "components/navigation"
 
-const Header = () => {
+const Header = ({ location }) => {
   return (
     <header>
-      <Navigation />
+      <Navigation location={location} />
     </header>
   )
 }

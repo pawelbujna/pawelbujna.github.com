@@ -1,5 +1,5 @@
 import React from "react"
-import SwiperCore, { EffectCoverflow, Pagination, Autoplay } from "swiper"
+import SwiperCore, { EffectFade, Autoplay } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import { useTranslation } from "react-i18next"
@@ -9,10 +9,8 @@ import hero3 from "./assets/hero-3.webp"
 import hero7 from "./assets/hero-7.webp"
 
 import "swiper/swiper.scss"
-import styles from "swiper/components/pagination/pagination.scss"
-console.log({ styles })
 
-SwiperCore.use([EffectCoverflow, Pagination, Autoplay])
+SwiperCore.use([EffectFade, Autoplay])
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -37,20 +35,10 @@ const Hero = () => {
   return (
     <Swiper
       id="hero"
-      effect="coverflow"
-      coverflowEffect={{ rotate: 50 }}
-      direction="horizontal"
+      effect="fade"
+      speed={3000}
       autoplay={{
-        delay: 5000,
-      }}
-      pagination={{
-        clickable: true,
-        el: ".swiper-pagination",
-        bulletClass: "swiper-bullet",
-        bulletActiveClass: "swiper-bullet-active",
-        renderBullet: (index, className) => {
-          return `<span class="${className}"></span>`
-        },
+        delay: 8000,
       }}
     >
       {data.map(item => (
@@ -59,23 +47,16 @@ const Hero = () => {
           style={{
             backgroundImage: `url(${item.image})`,
             backgroundSize: "cover",
+            backgroundPositionY: "20%",
           }}
         >
           <div className="cover">
-            <p className="is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-weight-light">
+            <p className="is-size-3-desktop is-size-4-tablet is-size-4-mobile has-text-weight-light">
               {item.title}
             </p>
-            <p className="is-size-5-desktop is-size-6-tablet is-size-7-mobile m-0">
-              {item.description}
-            </p>
-            {/* <a className="button is-primary is-uppercase" href="#collections">
-              {t("hero.button")}
-            </a> */}
           </div>
         </SwiperSlide>
       ))}
-
-      <div className="swiper-pagination"></div>
     </Swiper>
   )
 }

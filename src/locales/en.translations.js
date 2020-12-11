@@ -43,8 +43,9 @@ const translations = {
       title: "offered manufactures",
     },
     blinds: {
-      title: "satisfied clients",
+      title: "years on market",
     },
+    over: "over",
   },
 
   collections: {
@@ -52,7 +53,7 @@ const translations = {
     menu: {
       dayAndNight: "Day and night",
       dayAndNightWave: "Day and night wave",
-      blackout: "Blackout",
+      blackout: "Blackout thermo silver",
     },
     dayAndNight: {
       description:
@@ -61,14 +62,24 @@ const translations = {
         "If you want to know some details about our Day and Night Fabric Collection, please contact us.",
     },
     dayAndNightWave: {
-      description:
-        "The collection consists of single-color fabrics with a wavy structure. Compared to a standard fabric day and night, it offers additional options for darkening between day and night.",
+      description: `We present you a new model of day and night fabrics with a sinusoidal wave pattern.`,
+      description1: `The collection consists of single-color fabrics with a wavy structure. Compared to a standard fabric day and night, it offers additional options for darkening between day and night.`,
+      description2: `Whats more important, in the production of roller blinds, these fabrics operate on the same mechanisms as regular ones day and night fabrics do not require dedicated systems, so the implementation of fabrics into the offer the manufacturer is very smooth. The fabrics are thinner than our basic day & night range. Natural (basis weight below 100g / m2), which allows the fabric to fit freely in any cassette.`,
       contactDescription:
         "If you want to know some details about our Day and Night Wave Fabric Collection, please contact us.",
     },
     balckout: {
       description:
         "The collection of blackout fabrics are materials characterized by the highest European quality and designs based on the latest global trends.",
+      header: "Fabric consists of 3 layers:",
+      point1: `- The outer layer is covered with a silver coating. Has a thermal osolation effect. reflects
+      the sun's rays in summer and in winter keeps the heat inside.`,
+      point2: `- Rubbered layer ensuring 100% darkening of the room.`,
+      point3: `- The inner layer is covered with a decorative fabric selected for the customer. Available colors from white, through cream, gray, to black..`,
+      specification: "Fabric specification:",
+      spec1: `Width on the beam – 200 cm`,
+      spec2: `Warp – 40mb`,
+      spec3: `Weight – 220g/m2`,
       contactDescription:
         "If you want to know some details about our Blackout Fabric Collection, please contact us.",
     },
@@ -89,6 +100,7 @@ const translations = {
     title: "Contact us",
     name: "Name",
     phone: "Phone",
+    facebook: "Facebook",
     email: "Email",
     subject: "Subject",
     message: "Treść",

@@ -33,6 +33,10 @@
 
     @include underscore;
   }
+
+  &-description {
+    text-align: justify;
+  }
 }
 
 [data-theme="dark"] {

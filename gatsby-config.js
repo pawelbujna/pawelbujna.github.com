@@ -27,12 +27,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "G-HLWGHB3BDY",
-      },
-    },
-    {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: CMS_URL,

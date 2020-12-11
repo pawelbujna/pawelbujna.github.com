@@ -23,9 +23,9 @@ const Services = () => {
           duration={numberAnimationDuration}
           end={isVisible ? 4000000 : 0}
           separator=" "
-          suffix="m"
         />
       ),
+      prefix: t("services.over"),
       title: t("services.curtains.title"),
       animationDelay: 100,
     },
@@ -35,9 +35,9 @@ const Services = () => {
           duration={numberAnimationDuration}
           end={isVisible ? 50 : 0}
           separator=" "
-          prefix=">"
         />
       ),
+      prefix: t("services.over"),
       title: t("services.blinds.title"),
       animationDelay: 200,
     },
@@ -45,10 +45,11 @@ const Services = () => {
       counter: (
         <CountUp
           duration={numberAnimationDuration}
-          end={isVisible ? 20000 : 0}
+          end={isVisible ? 10 : 0}
           separator=" "
         />
       ),
+      prefix: t("services.over"),
       title: t("services.something.title"),
       animationDelay: 300,
     },
@@ -76,11 +77,14 @@ const Services = () => {
                 className="services-card mt-4"
                 data-aos="fade-up"
               >
+                <div className="services-card-title is-size-5-desktop">
+                  {service.prefix}
+                </div>
                 <div className="services-card-counter is-size-1 has-text-weight-light">
                   {service.counter}
                 </div>
                 <div>
-                  <p className="services-card-title is-size-5-desktop">
+                  <p className="services-card-title under is-size-5-desktop">
                     {service.title}
                   </p>
                 </div>

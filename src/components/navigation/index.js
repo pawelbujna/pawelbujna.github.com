@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { ThemeContext } from "components/themeContext"
-import { FiSun, FiMoon } from "react-icons/fi"
+import { FiSun, FiMoon, FiFacebook } from "react-icons/fi"
 import { Link } from "gatsby"
 import logo from "./logo.png"
 
@@ -148,6 +148,17 @@ const Navigation = ({ location }) => {
             >
               <span>{isDarkTheme ? <FiSun /> : <FiMoon />}</span>
             </div>
+
+            <a
+              className="navbar-item is-size-6 is-clickable"
+              href="https://www.facebook.com/AdBlind-642400769246086"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>
+                <FiFacebook />
+              </span>
+            </a>
 
             {location.pathname === "/" && (
               <>

@@ -9,16 +9,16 @@ const translations = {
   hero: {
     quotes: [
       {
-        quote: '"Bo piękno na to jest, by zachwycało"',
+        quote:
+          '"Piękno jest jednocześnie kształtem czegoś i czegoś zasłoną, drogą i zbłądzeniem z tej drogi."',
         author: "- Cyprian Kamil Norwid",
       },
       {
-        quote: '"Pięknem jest to, co samo przez się jest godne wyboru."',
+        quote: '"Sztuka to piękno, a piękno to coś, co porusza nasze serca."',
         author: "- Arystoteles",
       },
       {
-        quote:
-          '"Piękno rzeczy istnieje jedynie w umyśle tego, kto rzeczy te ogląda."',
+        quote: '"Prawdziwe piękno tkwi w szczegółach."',
         author: "- David Hume",
       },
     ],
@@ -30,10 +30,15 @@ const translations = {
   },
   aboutUs: {
     title: "Kim jesteśmy?",
-    description1:
-      "Od 2011 roku zajmujemy się tworzeniem kolekcji tkanin dekoracyjnych do systemów osłonowych. Obecnie posiadamy w naszej ofercie tkaniny  dzień i noc, zaciemniające blackout a także nowość dzień i noc fala. Prowadzimy dystrybucję tych tkanin w Polsce i za granicą. Naszą domeną jest przede wszystkim zapewnianie najwyższej jakości oferowanych produktów, co przekłada się na długoterminową współpracę z producentami rolet. Przeprowadzamy nieustającą kontrolę jakości oferowanych tkanin.  Nasza działalność obecnie skupia się na poszerzaniu oferty tkanin wyselekcjonowanych pod względem jakościowym, dostosowanych do potrzeb naszych klientów.",
-    description2:
-      "Od 2020 roku podążając za potrzebami rynku wprowadziliśmy również do naszej oferty filtry powietrza. Jest to dodatkowa działalność naszej firmy w której prężnie się rozwijamy.",
+    description1: `Od 2011 roku zajmujemy się tworzeniem kolekcji tkanin dekoracyjnych do systemów osłonowych.
+    Obecnie posiadamy w naszej ofercie tkaniny dzień i noc, zaciemniające termo „silver”, a także
+    nowość dzień i noc fala. Prowadzimy dystrybucję tkanin na terenie Polski oraz Europy. Naszą domeną
+    zapewnianie najwyższej jakości oferowanych produktów, co przekłada się na długoterminową
+    współpracę z producentami rolet. Przeprowadzamy nieustającą kontrolę jakości oferowanych tkanin.
+    Nasza działalność obecnie skupia się na poszerzaniu oferty tkanin wyselekcjonowanych pod
+    względem jakościowym, dostosowanych do potrzeb naszych klientów.`,
+    description2: `Od 2020 roku podążając za potrzebami rynku wprowadziliśmy również do naszej oferty filtry
+    powietrza. Jest to dodatkowa działalność naszej firmy w której prężnie się rozwijamy.`,
   },
 
   services: {
@@ -45,8 +50,9 @@ const translations = {
       title: "produktów w ofercie",
     },
     something: {
-      title: "zadowolonych klientów",
+      title: "lat na rynku",
     },
+    over: "ponad",
   },
 
   collections: {
@@ -55,7 +61,7 @@ const translations = {
     menu: {
       dayAndNight: "Dzień i noc",
       dayAndNightWave: "Dzień i noc fala",
-      blackout: "Blackout",
+      blackout: "Zaciemniające termosilver",
     },
     dayAndNight: {
       description:
@@ -65,13 +71,29 @@ const translations = {
     },
     dayAndNightWave: {
       description:
-        "Kolekcja składa się z tkanin jednobarwnych o strukturze falistej. W porównaniu do zwykłej tkaniny dzień i noc umożliwia dodatkowe możliwości stopnia zaciemniania pomiędzy dzień i noc.",
+        "Prezentujemy Państwu nowy model tkanin dzień i noc o wzorze sinusoidalnej fali.",
+      description1: `Każda z tkanin z kolekcji dzień i noc Fala dostępna jest w kilku wersjach kolorystycznych, od białej, przez różne szarości, po czarny.`,
+      description2: `Co istotne w produkcji rolet, tkaniny te działają na tych samych mechanizmach co zwykłe
+      tkaniny dzień i noc, nie wymagają dedykowanych systemów więc wdrożenie tkanin do oferty
+      producenta jest bardzo sprawne. Tkaniny są cieńsze od podstawowej naszej serii dzień i noc
+      Natural (gramatura poniżej 100g/m2) co powoduje że tkanina mieści się swobodnie w
+      dowolnej kasecie.`,
       contactDescription:
         "Jeśli chcą Państwo poznać naszą Kolekcję Tkanin Dzień i Noc Fala zapraszamy do kontaktu.",
     },
     balckout: {
       description:
         "Kolekcja tkanin zaciemniających to materiały cechujące się najwyższą europejską jakością oraz wzornictwem opartym na najnowszych światowych trendach.",
+      header: "Tkanina składa się z 3 warstw:",
+      point1: `- Warstwa zewnętrzna pokryta srebrną powłoką, ma działanie termoizolacyjne, odbija
+        promienie słoneczne latem a zimą utrzymuje ciepło wewnątrz pomieszczeń.`,
+      point2: `- Warstwa gumy zapewniająca w 100% zaciemnienie pomieszczenia.`,
+      point3: `- Warstwa wewnętrzna pokryta tkaniną dekoracyjną wybieraną pod klienta. Dostępna
+        kolorystyka od białego, poprzez krem, szarości, po czarny.`,
+      specification: "Specyfikacja tkaniny:",
+      spec1: `Szerokość na belce – 200 cm`,
+      spec2: `Nawój – 40mb`,
+      spec3: `Gramatura – 220g/m2`,
       contactDescription:
         "Jeśli chcą Państwo poznać naszą kolekcję tkanin zaciemniających zapraszamy do kontaktu.",
     },
@@ -89,6 +111,7 @@ const translations = {
     title: "Kontakt",
     name: "Imię",
     phone: "Numer kontaktowy",
+    facebook: "Facebook",
     email: "Email",
     subject: "Temat",
     message: "Treść",

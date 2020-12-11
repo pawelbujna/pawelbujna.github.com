@@ -79,7 +79,7 @@ const Contact = () => {
           </div>
         )}
 
-        <div className="columns contact-form">
+        <div className="columns contact-form" data-aos="fade-up">
           <div className="column is-8">
             <Formik
               initialValues={{
@@ -287,7 +287,7 @@ const Contact = () => {
                     </svg>
 
                     <p className="is-uppercase has-text-weight-semibold">
-                      {t("contact.phone")}
+                      {t("contact.facebook")}
                     </p>
                   </div>
                 </div>

@@ -13,9 +13,9 @@ const AboutUs = () => {
           <div className="about-us-title is-size-3-desktop is-size-4-tablet is-size-4-mobile is-uppercase has-text-weight-semibold mb-6">
             {t("aboutUs.title")}
           </div>
-          <p>{t("aboutUs.description1")}</p>
+          <p className="about-us-description">{t("aboutUs.description1")}</p>
           <br />
-          <p>{t("aboutUs.description2")}</p>
+          <p className="about-us-description">{t("aboutUs.description2")}</p>
         </div>
       </div>
       <div
@@ -24,6 +24,7 @@ const AboutUs = () => {
         style={{
           backgroundImage: `url(${AboutUs1})`,
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       ></div>
     </div>

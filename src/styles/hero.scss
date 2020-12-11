@@ -4,8 +4,8 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 .swiper-container {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .swiper-slide {
@@ -37,12 +37,12 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: absolute;
     background-color: rgba(white, 0.8);
     opacity: 0;
-    top: 50%;
-    padding: 80px;
-    left: 15vw;
-    right: 15vw;
+    bottom: 10%;
+    padding: 20px;
+    left: 0;
+    right: 0;
     transform: translateY(120%);
-    transition: all 0.4s ease;
+    transition: all 1s ease;
     transition-delay: 0.7s;
     transform-origin: bottom;
     box-sizing: border-box;
@@ -53,12 +53,6 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
       &:first-child {
         color: black;
-
-        @include until($tablet) {
-          margin-bottom: 20px;
-        }
-
-        margin-bottom: 35px;
       }
 
       &:nth-child(2) {
@@ -80,12 +74,6 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
           }
         }
       }
-
-      @include until($tablet) {
-        margin-bottom: 10px;
-      }
-
-      margin-bottom: 30px;
     }
 
     .button {
@@ -102,7 +90,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
       opacity: 1;
-      transform: translateY(-50%);
+      transform: translateY(0);
     }
   }
 }

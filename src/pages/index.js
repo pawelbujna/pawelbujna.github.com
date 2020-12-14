@@ -5,9 +5,8 @@ import { Hero } from "components/hero"
 import { AboutUs } from "components/about-us"
 import { Services } from "components/services"
 import { Collections } from "components/collections"
-import { OurCollections } from "components/our-collections"
+import { Inspirations } from "components/inspirations"
 import { Contact } from "components/contact"
-import { ContactUs } from "components/contact-us"
 import { Banner } from "components/banner"
 import { Filters } from "components/filters"
 import { News } from "components/news"
@@ -19,14 +18,13 @@ export default function Home({ location } = { location: { pathname: "/" } }) {
       <Hero />
       <Tips />
       <AboutUs />
-      {/* <OurCollections /> */}
       <Services />
       <Collections />
+      <Inspirations />
       <Filters />
       <News />
       <Contact />
       <Banner />
-      {/* <ContactUs /> */}
     </Layout>
   )
 }

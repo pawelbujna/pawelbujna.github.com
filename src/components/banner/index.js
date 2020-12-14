@@ -13,7 +13,7 @@ const Banner = () => {
         style={{
           backgroundImage: `url(${ContactUs1})`,
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "center 30%",
           height: "500px",
         }}
       ></div>

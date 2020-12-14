@@ -2,6 +2,18 @@ $duration: 0.2s;
 $distance: 8px;
 $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .swiper-container {
   width: 100%;
   padding-top: 30px;
@@ -17,10 +29,33 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 320px !important;
   }
 
-  background-position: center;
-  background-size: cover;
-  height: 700px !important;
-  position: relative;
+  & > div {
+    position: relative;
+    height: 700px !important;
+
+    @include until($desktop) {
+      height: 600px !important;
+    }
+
+    @include until($tablet) {
+      height: 320px !important;
+    }
+
+    & > div:not(.cover) {
+      background-position: center;
+      background-size: cover;
+      height: 700px !important;
+      animation: shrink 26s infinite ease-in-out;
+
+      @include until($desktop) {
+        height: 600px !important;
+      }
+
+      @include until($tablet) {
+        height: 320px !important;
+      }
+    }
+  }
 
   .cover {
     text-align: center;
@@ -29,8 +64,6 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
       padding: 20px;
       left: 0;
       right: 0;
-      top: 100%;
-      transform: translateY(100%);
       max-width: none;
     }
 
@@ -41,7 +74,6 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     padding: 20px;
     left: 0;
     right: 0;
-    transform: translateY(120%);
     transition: all 1s ease;
     transition-delay: 0.7s;
     transform-origin: bottom;
@@ -86,11 +118,10 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   &-active {
     .cover {
       @include until($tablet) {
-        transform: translateY(-100%);
+        bottom: 5%;
       }
 
       opacity: 1;
-      transform: translateY(0);
     }
   }
 }

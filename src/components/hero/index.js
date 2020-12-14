@@ -38,22 +38,24 @@ const Hero = () => {
       effect="fade"
       speed={3000}
       autoplay={{
-        delay: 8000,
+        delay: 5000,
       }}
     >
       {data.map(item => (
-        <SwiperSlide
-          key={item.title}
-          style={{
-            backgroundImage: `url(${item.image})`,
-            backgroundSize: "cover",
-            backgroundPositionY: "20%",
-          }}
-        >
-          <div className="cover">
-            <p className="is-size-3-desktop is-size-4-tablet is-size-4-mobile has-text-weight-light">
-              {item.title}
-            </p>
+        <SwiperSlide key={item.title}>
+          <div>
+            <div
+              className="slider-image"
+              style={{
+                backgroundImage: `url(${item.image})`,
+                backgroundPositionY: "20%",
+              }}
+            ></div>
+            <div className="cover">
+              <p className="is-size-3-desktop is-size-4-tablet is-size-5-mobile has-text-weight-light">
+                {item.title}
+              </p>
+            </div>
           </div>
         </SwiperSlide>
       ))}

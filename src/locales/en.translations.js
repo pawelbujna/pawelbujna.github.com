@@ -4,6 +4,8 @@ const translations = {
     news: "news",
     collections: "collections",
     contact: "contact",
+    inspirations: "inspirations",
+    filters: "filters",
   },
   hero: {
     quotes: [
@@ -72,10 +74,10 @@ const translations = {
       description:
         "The collection of blackout fabrics are materials characterized by the highest European quality and designs based on the latest global trends.",
       header: "Fabric consists of 3 layers:",
-      point1: `- The outer layer is covered with a silver coating. Has a thermal osolation effect. reflects
+      point1: `1. The outer layer is covered with a silver coating. Has a thermal osolation effect. reflects
       the sun's rays in summer and in winter keeps the heat inside.`,
-      point2: `- Rubbered layer ensuring 100% darkening of the room.`,
-      point3: `- The inner layer is covered with a decorative fabric selected for the customer. Available colors from white, through cream, gray, to black..`,
+      point2: `2. Rubbered layer ensuring 100% darkening of the room.`,
+      point3: `3. The inner layer is covered with a decorative fabric selected for the customer. Available colors from white, through cream, gray, to black..`,
       specification: "Fabric specification:",
       spec1: `Width on the beam – 200 cm`,
       spec2: `Warp – 40mb`,
@@ -84,6 +86,9 @@ const translations = {
         "If you want to know some details about our Blackout Fabric Collection, please contact us.",
     },
     button: "Contact",
+  },
+  inspirations: {
+    title: "Our inspirations",
   },
 
   filters: {

@@ -11,9 +11,8 @@ const Services = () => {
   const { t } = useTranslation()
 
   const setVisibility = visibility => {
-    if (!isVisible) {
-      setIsVisible(visibility)
-    }
+    console.log(visibility)
+    setIsVisible(visibility)
   }
 
   const data = [
@@ -68,7 +67,7 @@ const Services = () => {
           <div></div>
         </div>
 
-        <VisibilitySensor onChange={setVisibility}>
+        <VisibilitySensor partialVisibility onChange={setVisibility}>
           <div className="services-cards">
             {data.map((service, index) => (
               <div

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { ThemeContext } from "components/themeContext"
 import { FiSun, FiMoon, FiFacebook } from "react-icons/fi"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import logo from "./logo.png"
 
 const Navigation = ({ location }) => {
@@ -18,13 +18,22 @@ const Navigation = ({ location }) => {
   const changeLanguage = lang => {
     i18n.changeLanguage(lang)
   }
-
-  useEffect(() => {
+  const scrollToSection = () => {
     const element = document.getElementById(currentElement.name)
     window.scrollTo({
       top: element.offsetTop - currentElement.offset,
       behavior: "smooth",
     })
+  }
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setTimeout(() => {
+        scrollToSection()
+      }, 1000)
+    } else {
+      scrollToSection()
+    }
   }, [currentElement])
 
   const handleScroll = () => {
@@ -86,58 +95,80 @@ const Navigation = ({ location }) => {
 
         <div className={`navbar-menu ${isMenuOpened ? "is-active" : ""}`}>
           <div className="navbar-end">
-            {location.pathname === "/" ? (
-              <>
-                <a
-                  className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-                  onClick={() => {
-                    setCurrentElement({ name: "about-us", offset: 110 })
-                    hideMenu()
-                  }}
-                >
-                  <span>{t("navbar.about")}</span>
-                </a>
+            <a
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+              onClick={() => {
+                navigate("/")
+                setCurrentElement({ name: "about-us", offset: 110 })
+                hideMenu()
+              }}
+            >
+              <span>{t("navbar.about")}</span>
+            </a>
 
-                <a
-                  className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-                  onClick={() => {
-                    setCurrentElement({ name: "collections", offset: 110 })
-                    hideMenu()
-                  }}
-                >
-                  <span>{t("navbar.collections")}</span>
-                </a>
+            <a
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+              onClick={() => {
+                navigate("/")
+                setCurrentElement({ name: "collections", offset: 110 })
+                hideMenu()
+              }}
+            >
+              <span>{t("navbar.collections")}</span>
+            </a>
 
-                <a
-                  className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-                  onClick={() => {
-                    setCurrentElement({ name: "news", offset: 110 })
-                    hideMenu()
-                  }}
-                >
-                  <span>{t("navbar.news")}</span>
-                </a>
+            <a
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+              onClick={() => {
+                navigate("/")
+                setCurrentElement({ name: "inspirations", offset: 110 })
+                hideMenu()
+              }}
+            >
+              <span>{t("navbar.inspirations")}</span>
+            </a>
 
-                {i18n.language === "pl" && (
-                  <Link
-                    className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-                    to={"/work"}
-                  >
-                    <span>{t("navbar.work")}</span>
-                  </Link>
-                )}
+            <a
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+              onClick={() => {
+                navigate("/")
+                setCurrentElement({ name: "filters", offset: 110 })
+                hideMenu()
+              }}
+            >
+              <span>{t("navbar.filters")}</span>
+            </a>
 
-                <a
-                  className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
-                  onClick={() => {
-                    setCurrentElement({ name: "contact", offset: 110 })
-                    hideMenu()
-                  }}
-                >
-                  <span>{t("navbar.contact")}</span>
-                </a>
-              </>
-            ) : null}
+            <a
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+              onClick={() => {
+                navigate("/")
+                setCurrentElement({ name: "news", offset: 110 })
+                hideMenu()
+              }}
+            >
+              <span>{t("navbar.news")}</span>
+            </a>
+
+            {i18n.language === "pl" && (
+              <Link
+                className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+                to={"/work"}
+              >
+                <span>{t("navbar.work")}</span>
+              </Link>
+            )}
+
+            <a
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+              onClick={() => {
+                navigate("/")
+                setCurrentElement({ name: "contact", offset: 110 })
+                hideMenu()
+              }}
+            >
+              <span>{t("navbar.contact")}</span>
+            </a>
 
             <div
               className="navbar-item is-size-6 is-clickable"

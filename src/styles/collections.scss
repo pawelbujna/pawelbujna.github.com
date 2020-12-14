@@ -34,9 +34,11 @@
       @include until($desktop) {
         padding: 10px 10px;
       }
+      text-align: center;
 
       span {
         transition: 0.4s ease color;
+        display: block;
         position: relative;
 
         @include hover-underscore;
@@ -94,7 +96,7 @@
 
   &-image-blackout {
     @include until($tablet) {
-      height: 400px;
+      height: 200px;
     }
   }
 

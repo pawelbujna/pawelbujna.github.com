@@ -94,7 +94,7 @@ const NoFormContact = () => {
                     </svg>
 
                     <p className="is-uppercase has-text-weight-semibold">
-                      {t("contact.phone")}
+                      {t("contact.facebook")}
                     </p>
                   </div>
                 </div>

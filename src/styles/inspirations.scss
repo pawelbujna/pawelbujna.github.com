@@ -1,0 +1,37 @@
+.inspirations {
+  background-color: $primaryBackgroundColor;
+
+  &-titles {
+    display: flex;
+
+    div,
+    p {
+      flex-grow: 1;
+    }
+  }
+
+  &-title {
+    color: black;
+    position: relative;
+
+    @include underscore;
+  }
+
+  &-image {
+    height: 400px;
+
+    @include until($tablet) {
+      height: 250px;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .inspirations {
+    background-color: $darkThemePrimaryBackgroundColor;
+
+    &-title {
+      color: white;
+    }
+  }
+}

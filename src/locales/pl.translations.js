@@ -5,6 +5,8 @@ const translations = {
     collections: "kolekcje",
     contact: "kontakt",
     work: "praca",
+    inspirations: "inspiracje",
+    filters: "filtry",
   },
   hero: {
     quotes: [
@@ -85,10 +87,10 @@ const translations = {
       description:
         "Kolekcja tkanin zaciemniających to materiały cechujące się najwyższą europejską jakością oraz wzornictwem opartym na najnowszych światowych trendach.",
       header: "Tkanina składa się z 3 warstw:",
-      point1: `- Warstwa zewnętrzna pokryta srebrną powłoką, ma działanie termoizolacyjne, odbija
+      point1: `1. Warstwa zewnętrzna pokryta srebrną powłoką, ma działanie termoizolacyjne, odbija
         promienie słoneczne latem a zimą utrzymuje ciepło wewnątrz pomieszczeń.`,
-      point2: `- Warstwa gumy zapewniająca w 100% zaciemnienie pomieszczenia.`,
-      point3: `- Warstwa wewnętrzna pokryta tkaniną dekoracyjną wybieraną pod klienta. Dostępna
+      point2: `2. Warstwa gumy zapewniająca w 100% zaciemnienie pomieszczenia.`,
+      point3: `3. Warstwa wewnętrzna pokryta tkaniną dekoracyjną wybieraną pod klienta. Dostępna
         kolorystyka od białego, poprzez krem, szarości, po czarny.`,
       specification: "Specyfikacja tkaniny:",
       spec1: `Szerokość na belce – 200 cm`,
@@ -97,6 +99,9 @@ const translations = {
       contactDescription:
         "Jeśli chcą Państwo poznać naszą kolekcję tkanin zaciemniających zapraszamy do kontaktu.",
     },
+  },
+  inspirations: {
+    title: "Nasze inspiracje",
   },
   filters: {
     title: "Filtry powietrza",

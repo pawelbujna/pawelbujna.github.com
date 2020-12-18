@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
-import useSSR from "use-ssr"
-import Recaptcha from "react-recaptcha"
+// import useSSR from "use-ssr"
+// import Recaptcha from "react-recaptcha"
 
 const { CMS_URL } = process.env
 
@@ -11,7 +11,8 @@ const Contact = () => {
   const { t } = useTranslation()
   const [isVerified, setIsVerified] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  const { isBrowser } = useSSR()
+  const [isLoading, setIsLoading] = useState(false)
+  // const { isBrowser } = useSSR()
 
   const contactSchema = Yup.object().shape({
     name: Yup.string()
@@ -35,6 +36,7 @@ const Contact = () => {
   })
 
   const submitForm = (data, { resetForm }) => {
+    setIsLoading(true)
     fetch(`${CMS_URL}/messages`, {
       method: "POST",
       headers: {
@@ -43,7 +45,9 @@ const Contact = () => {
       },
       body: JSON.stringify({ ...data }),
     }).then(() => {
+      setIsLoading(false)
       setIsSuccess(true)
+      setIsVerified(false)
       resetForm()
     })
   }
@@ -60,24 +64,6 @@ const Contact = () => {
           </p>
           <div></div>
         </div>
-
-        {isSuccess && (
-          <div className="contact-success my-6">
-            <p>
-              {t("contact.emailSentSuccess")}
-              <br />
-              <button
-                className="button is-small"
-                onClick={() => {
-                  setIsSuccess(false)
-                  setIsVerified(true)
-                }}
-              >
-                {t("contact.close")}
-              </button>
-            </p>
-          </div>
-        )}
 
         <div className="columns contact-form" data-aos="fade-up">
           <div className="column is-8">
@@ -192,21 +178,58 @@ const Contact = () => {
                   </div>
 
                   <div className="contact-submit mt-4">
-                    {isBrowser && (
+                    {/* {isBrowser && (
                       <Recaptcha
                         sitekey="6Ldise4ZAAAAAG_eQYNqkhopulKOZzsnleWImG2d"
                         render="explicit"
                         verifyCallback={() => setIsVerified(true)}
+                        onloadCallback={console.log.bind(
+                          this,
+                          "recaptcha loaded"
+                        )}
                       />
-                    )}
+                    )} */}
 
-                    <button
-                      disabled={!isVerified}
-                      className="button is-primary mt-5"
-                      type="submit"
-                    >
-                      {t("contact.send")}
-                    </button>
+                    <div className="columns">
+                      <div
+                        className="column is-6"
+                        style={{
+                          textAlign: "left",
+                        }}
+                      >
+                        {isSuccess && (
+                          <div className="contact-success my-6">
+                            <p>
+                              <span className="mr-4">
+                                {t("contact.emailSentSuccess")}
+                              </span>
+                              <button
+                                className="button is-small"
+                                onClick={() => {
+                                  setIsSuccess(false)
+                                }}
+                              >
+                                {t("contact.close")}
+                              </button>
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="column is-6">
+                        <button
+                          // disabled={!isVerified || isLoading}
+                          disabled={isLoading}
+                          className="button is-primary mt-5"
+                          type="submit"
+                        >
+                          {isLoading ? (
+                            <div className="loader"></div>
+                          ) : (
+                            t("contact.send")
+                          )}
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </Form>
               )}

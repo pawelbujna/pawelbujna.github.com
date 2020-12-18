@@ -47,7 +47,7 @@ const Inspirations = () => {
 
         <div className="columns is-multiline">
           {images.map(image => (
-            <div className="column is-3">
+            <div className="column is-3" data-aos="fade-up">
               <div
                 className="inspirations-image"
                 style={{

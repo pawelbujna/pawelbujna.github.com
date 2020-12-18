@@ -11,16 +11,15 @@ const translations = {
   hero: {
     quotes: [
       {
-        quote:
-          '"Piękno jest jednocześnie kształtem czegoś i czegoś zasłoną, drogą i zbłądzeniem z tej drogi."',
+        quote: '"Piękno jest jednocześnie kształtem czegoś i czegoś zasłoną"',
         author: "- Cyprian Kamil Norwid",
       },
       {
-        quote: '"Sztuka to piękno, a piękno to coś, co porusza nasze serca."',
+        quote: '"Sztuka to piękno, a piękno to coś, co porusza nasze serca"',
         author: "- Arystoteles",
       },
       {
-        quote: '"Prawdziwe piękno tkwi w szczegółach."',
+        quote: '"Prawdziwe piękno tkwi w szczegółach"',
         author: "- David Hume",
       },
     ],
@@ -35,7 +34,7 @@ const translations = {
     description1: `Od 2011 roku zajmujemy się tworzeniem kolekcji tkanin dekoracyjnych do systemów osłonowych.
     Obecnie posiadamy w naszej ofercie tkaniny dzień i noc, zaciemniające termo „silver”, a także
     nowość dzień i noc fala. Prowadzimy dystrybucję tkanin na terenie Polski oraz Europy. Naszą domeną
-    zapewnianie najwyższej jakości oferowanych produktów, co przekłada się na długoterminową
+    jest zapewnianie najwyższej jakości oferowanych produktów, co przekłada się na długoterminową
     współpracę z producentami rolet. Przeprowadzamy nieustającą kontrolę jakości oferowanych tkanin.
     Nasza działalność obecnie skupia się na poszerzaniu oferty tkanin wyselekcjonowanych pod
     względem jakościowym, dostosowanych do potrzeb naszych klientów.`,

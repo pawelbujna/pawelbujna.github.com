@@ -7,7 +7,6 @@ import { Services } from "components/services"
 import { Collections } from "components/collections"
 import { Inspirations } from "components/inspirations"
 import { Contact } from "components/contact"
-import { Banner } from "components/banner"
 import { Filters } from "components/filters"
 import { News } from "components/news"
 import { Tips } from "components/tips"
@@ -24,7 +23,6 @@ export default function Home({ location } = { location: { pathname: "/" } }) {
       <Filters />
       <News />
       <Contact />
-      <Banner />
     </Layout>
   )
 }

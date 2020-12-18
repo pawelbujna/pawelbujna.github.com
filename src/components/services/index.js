@@ -11,7 +11,6 @@ const Services = () => {
   const { t } = useTranslation()
 
   const setVisibility = visibility => {
-    console.log(visibility)
     setIsVisible(visibility)
   }
 
@@ -21,6 +20,7 @@ const Services = () => {
         <CountUp
           duration={numberAnimationDuration}
           end={isVisible ? 4000000 : 0}
+          suffix=" m"
           separator=" "
         />
       ),
@@ -68,18 +68,18 @@ const Services = () => {
         </div>
 
         <VisibilitySensor partialVisibility onChange={setVisibility}>
-          <div className="services-cards">
+          <div className="services-cards columns">
             {data.map((service, index) => (
               <div
                 key={index}
                 data-aos-delay={`${service.animationDelay}`}
-                className="services-card mt-4"
+                className="services-card column mt-4 m-2"
                 data-aos="fade-up"
               >
                 <div className="services-card-title is-size-5-desktop">
                   {service.prefix}
                 </div>
-                <div className="services-card-counter is-size-1 has-text-weight-light">
+                <div className="services-card-counter is-size-1-widescreen is-size-3-desktop  is-size-3-tablet is-size-3-mobile has-text-weight-light">
                   {service.counter}
                 </div>
                 <div>

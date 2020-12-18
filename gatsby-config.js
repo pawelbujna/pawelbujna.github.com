@@ -3,13 +3,12 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-
 const { CMS_URL } = process.env
 
 module.exports = {
   siteMetadata: {
     title: `ADBLIND Materiały do rolet dzień i noc`,
-    description: `Materiały do rolet`,
+    description: `Materiały do rolet. Kolekcje dzień i noc, dzień i noc fala oraz zaciemniające thermo-silver. Filtry powietrza.`,
     siteUrl: "http://adblind.pl/",
     author: `Paweł Bujna`,
   },

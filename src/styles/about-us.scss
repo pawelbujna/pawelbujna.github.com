@@ -27,13 +27,6 @@
     min-height: 450px;
   }
 
-  &-title {
-    position: relative;
-    color: black;
-
-    @include underscore;
-  }
-
   &-description {
     text-align: justify;
   }
@@ -43,10 +36,6 @@
   .about-us {
     p {
       color: $darkThemeTextColor;
-    }
-
-    &-title {
-      color: white;
     }
   }
 }

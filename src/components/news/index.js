@@ -2,6 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 import { useStaticQuery, graphql } from "gatsby"
 import { Card } from "./card"
+import { Title } from "components/title"
 
 const News = () => {
   const { t } = useTranslation()
@@ -32,15 +33,7 @@ const News = () => {
   return (
     <div className="news p-6" id="news">
       <div className="container">
-        <div className="news-titles">
-          <p
-            className="news-title is-uppercase has-text-weight-semibold is-size-3-desktop is-size-4-tablet is-size-4-mobile mb-6"
-            data-aos="fade-up"
-          >
-            {t("news.title")}
-          </p>
-          <div></div>
-        </div>
+        <Title text={t("news.title")} />
 
         <div className="columns">
           {data.allStrapiNews.edges.map(item => (

@@ -24,22 +24,6 @@
     }
   }
 
-  &-titles {
-    display: flex;
-
-    div,
-    p {
-      flex-grow: 1;
-    }
-  }
-
-  &-title {
-    color: black;
-    position: relative;
-
-    @include underscore;
-  }
-
   &-info {
     display: flex;
     justify-content: center;
@@ -78,10 +62,6 @@
 [data-theme="dark"] {
   .no-form-contact {
     color: white;
-
-    &-title {
-      color: white;
-    }
 
     &-card {
       background-color: $darkThemeSecondaryBackgroundColor;

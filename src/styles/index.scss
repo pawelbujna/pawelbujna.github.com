@@ -109,16 +109,15 @@ body {
   }
 }
 
+@import "title.scss";
 @import "hero.scss";
 @import "navbar.scss";
-@import "header.scss";
 @import "colors.scss";
 @import "about-us.scss";
 @import "filters.scss";
 @import "services.scss";
 @import "collections.scss";
 @import "contact.scss";
-@import "contact-us.scss";
 @import "footer.scss";
 @import "loader.scss";
 @import "tips.scss";

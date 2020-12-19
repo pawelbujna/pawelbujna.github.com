@@ -1,0 +1,38 @@
+.title {
+  display: flex;
+
+  div,
+  p {
+    flex-grow: 1;
+  }
+
+  p {
+    position: relative;
+    color: black;
+
+    @include underscore;
+  }
+
+  &-revert {
+    p {
+      position: relative;
+      color: white;
+
+      @include underscore;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .title {
+    p {
+      color: white;
+    }
+
+    &-revert {
+      p {
+        color: black;
+      }
+    }
+  }
+}

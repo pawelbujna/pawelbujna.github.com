@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next"
 import CountUp from "react-countup"
 import VisibilitySensor from "react-visibility-sensor"
 
+import { Title } from "components/title"
+
 const numberAnimationDuration = 2.5
 
 const Services = () => {
@@ -57,15 +59,7 @@ const Services = () => {
   return (
     <div id="services" className="services p-6">
       <div className="container">
-        <div className="services-titles">
-          <p
-            className="services-title is-uppercase has-text-weight-semibold is-size-3-desktop is-size-4-tablet is-size-4-mobile mb-6"
-            data-aos="fade-up"
-          >
-            {t("services.title")}
-          </p>
-          <div></div>
-        </div>
+        <Title text={t("services.title")} />
 
         <VisibilitySensor partialVisibility onChange={setVisibility}>
           <div className="services-cards columns">

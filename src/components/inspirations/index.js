@@ -1,5 +1,6 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
+import { Title } from "components/title"
 
 import image2 from "./assets/2.webp"
 import image3 from "./assets/3.webp"
@@ -35,15 +36,7 @@ const Inspirations = () => {
   return (
     <div id="inspirations" className="inspirations p-6">
       <div className="container">
-        <div className="inspirations-titles">
-          <p
-            className="inspirations-title is-uppercase has-text-weight-semibold is-size-3-desktop is-size-4-tablet is-size-4-mobile mb-6"
-            data-aos="fade-up"
-          >
-            {t("inspirations.title")}
-          </p>
-          <div></div>
-        </div>
+        <Title text={t("inspirations.title")} />
 
         <div className="columns is-multiline">
           {images.map((image, index) => (

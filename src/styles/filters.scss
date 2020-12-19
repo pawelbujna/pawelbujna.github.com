@@ -26,23 +26,12 @@
 
     min-height: 450px;
   }
-
-  &-title {
-    position: relative;
-    color: black;
-
-    @include underscore;
-  }
 }
 
 [data-theme="dark"] {
   .filters {
     p {
       color: $darkThemeTextColor;
-    }
-
-    &-title {
-      color: white;
     }
   }
 }

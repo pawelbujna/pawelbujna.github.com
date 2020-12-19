@@ -5,6 +5,8 @@ import { DayAndNight } from "./dayAndNight"
 import { DayAndNightWave } from "./dayAndNightWave"
 import { Blackout } from "./blackout"
 
+import { Title } from "components/title"
+
 const Collections = () => {
   const { t } = useTranslation()
 
@@ -14,15 +16,7 @@ const Collections = () => {
   return (
     <div id="collections" className="collections p-6">
       <div>
-        <div className="collections-titles">
-          <p
-            className="collections-title is-uppercase has-text-weight-semibold is-size-3-desktop is-size-4-tablet is-size-4-mobile mb-6"
-            data-aos="fade-up"
-          >
-            {t("collections.title")}
-          </p>
-          <div></div>
-        </div>
+        <Title text={t("collections.title")} revert />
 
         <div className="collections-menu is-uppercase" data-aos="fade-up">
           <div className="has-text-weight-semibold is-size-6">

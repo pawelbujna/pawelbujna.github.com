@@ -1,6 +1,7 @@
 import React from "react"
 
 import { useTranslation } from "react-i18next"
+import { Title } from "components/title"
 
 const NoFormContact = () => {
   const { t } = useTranslation()
@@ -8,15 +9,7 @@ const NoFormContact = () => {
   return (
     <div id="contact" className="no-form-contact p-6">
       <div className="container">
-        <div className="no-form-contact-titles">
-          <p
-            className="no-form-contact-title is-uppercase has-text-weight-semibold is-size-3-desktop is-size-4-tablet is-size-4-mobile mb-6"
-            data-aos="fade-up"
-          >
-            {t("contact.title")}
-          </p>
-          <div></div>
-        </div>
+        <Title text={t("contact.title")} />
 
         <div className="columns">
           <div className="column is-12">

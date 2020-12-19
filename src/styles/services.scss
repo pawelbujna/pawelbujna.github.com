@@ -14,22 +14,6 @@
     }
   }
 
-  &-titles {
-    display: flex;
-
-    div,
-    p {
-      flex-grow: 1;
-    }
-  }
-
-  &-title {
-    color: black;
-    position: relative;
-
-    @include underscore;
-  }
-
   &-cards {
     display: flex;
     justify-content: space-between;

@@ -24,22 +24,6 @@
     }
   }
 
-  &-titles {
-    display: flex;
-
-    div,
-    p {
-      flex-grow: 1;
-    }
-  }
-
-  &-title {
-    color: black;
-    position: relative;
-
-    @include underscore;
-  }
-
   &-card {
     background-color: white;
     padding: 10px;

@@ -2,6 +2,7 @@ import React from "react"
 import AboutUs1 from "./assets/about-us-1.webp"
 
 import { useTranslation } from "react-i18next"
+import { Title } from "components/title"
 
 const AboutUs = () => {
   const { t } = useTranslation()
@@ -10,9 +11,8 @@ const AboutUs = () => {
     <div id="about-us" className="about-us">
       <div className="about-us-info p-6" data-aos="fade-up">
         <div>
-          <div className="about-us-title is-size-3-desktop is-size-4-tablet is-size-4-mobile is-uppercase has-text-weight-semibold mb-6">
-            {t("aboutUs.title")}
-          </div>
+          <Title text={t("aboutUs.title")} />
+
           <p className="about-us-description">{t("aboutUs.description1")}</p>
           <br />
           <p className="about-us-description">{t("aboutUs.description2")}</p>

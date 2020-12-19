@@ -1,6 +1,7 @@
 import React from "react"
 import Filters1 from "./assets/filters-1.jpg"
 import classification from "./assets/classification.jpg"
+import { Title } from "components/title"
 
 import { useTranslation } from "react-i18next"
 
@@ -11,9 +12,8 @@ const Filters = () => {
     <div id="filters" className="filters">
       <div className="filters-info p-6" data-aos="fade-up">
         <div>
-          <div className="filters-title is-size-3-desktop is-size-4-tablet is-size-4-mobile is-uppercase has-text-weight-semibold mb-6">
-            {t("filters.title")}
-          </div>
+          <Title text={t("filters.title")} />
+
           <p>{t("filters.description1")}</p>
           <a
             className="button is-primary mt-5"

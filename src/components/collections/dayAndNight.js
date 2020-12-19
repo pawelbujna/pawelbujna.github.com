@@ -1,5 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
+
+import Lightbox from "react-awesome-lightbox"
+import "react-awesome-lightbox/build/style.css"
 
 import DN1 from "./assets/day-and-night/1.webp"
 import DN2 from "./assets/day-and-night/2.webp"
@@ -12,6 +15,8 @@ import woodCollectionPdf from "./assets/wood.pdf"
 
 const DayAndNight = () => {
   const { t } = useTranslation()
+  const [isOpened, setIsOpened] = useState(false)
+  const [currentImage, setCurrentImage] = useState(null)
 
   const description = t("collections.dayAndNight.description")
   const description2 = t("collections.dayAndNight.description2")
@@ -30,6 +35,15 @@ const DayAndNight = () => {
         className="collections-description has-text-centered is-size-5"
         data-aos="fade-up"
       >
+        {isOpened && (
+          <Lightbox
+            image={currentImage}
+            onClose={() => {
+              setIsOpened(false)
+            }}
+          />
+        )}
+
         <p>{description}</p>
 
         <p className="mt-4">{description2}</p>
@@ -58,37 +72,62 @@ const DayAndNight = () => {
         <div className="collections-gallery-grid">
           <div>
             <div
+              onClick={() => {
+                setCurrentImage(images[0])
+                setIsOpened(true)
+              }}
               style={{
                 backgroundImage: `url(${images[0]})`,
+                cursor: "pointer",
               }}
             ></div>
           </div>
           <div>
             <div
+              onClick={() => {
+                setCurrentImage(images[1])
+                setIsOpened(true)
+              }}
               style={{
                 backgroundImage: `url(${images[1]})`,
+                cursor: "pointer",
               }}
             ></div>
           </div>
           <div>
             <div
+              onClick={() => {
+                setCurrentImage(images[2])
+                setIsOpened(true)
+              }}
               style={{
                 backgroundImage: `url(${images[2]})`,
+                cursor: "pointer",
               }}
             ></div>
           </div>
           <div>
             <div
+              onClick={() => {
+                setCurrentImage(images[3])
+                setIsOpened(true)
+              }}
               style={{
                 backgroundImage: `url(${images[3]})`,
+                cursor: "pointer",
               }}
             ></div>
           </div>
         </div>
         <div className="collections-gallery-hero">
           <div
+            onClick={() => {
+              setCurrentImage(images[4])
+              setIsOpened(true)
+            }}
             style={{
               backgroundImage: `url(${images[4]})`,
+              cursor: "pointer",
             }}
           ></div>
         </div>

@@ -60,6 +60,9 @@ const translations = {
     dayAndNight: {
       description:
         "The collections consist of single-color and multi-colored fabrics in a very wide range of colors. These are natural, structural and satin fabrics.",
+      description2: "Check out our pattern books:",
+      naturalCollectionLinkText: "NATURAL",
+      woodCollectionLinkText: "WOOD",
       contactDescription:
         "If you want to know some details about our Day and Night Fabric Collection, please contact us.",
     },

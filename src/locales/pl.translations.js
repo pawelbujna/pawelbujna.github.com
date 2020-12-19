@@ -67,6 +67,9 @@ const translations = {
     dayAndNight: {
       description:
         "Kolekcje składają się z tkanin jednobarwnych oraz wielobarwnych w bardzo szerokiej kolorystyce. Są to tkaniny naturalne, strukturalne oraz satynowe.",
+      description2: "Sprawdź nasze wzorniki:",
+      naturalCollectionLinkText: "NATURAL",
+      woodCollectionLinkText: "WOOD",
       contactDescription:
         "Jeśli chcą Państwo poznać naszą Kolekcję Tkanin Dzień i Noc zapraszamy do kontaktu.",
     },

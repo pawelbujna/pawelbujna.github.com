@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import { DayAndNight } from "./dayAndNight"
@@ -7,11 +7,6 @@ import { Blackout } from "./blackout"
 
 const Collections = () => {
   const { t } = useTranslation()
-
-  const data = {
-    dayAndNightWave: {},
-    balckout: {},
-  }
 
   const initialCollection = "dayAndNight"
   const [currentType, setCurrentType] = useState(initialCollection)

@@ -7,11 +7,21 @@ import DN3 from "./assets/day-and-night/3.webp"
 import DN4 from "./assets/day-and-night/4.webp"
 import DN5 from "./assets/day-and-night/5.webp"
 
+import naturalCollectionPdf from "./assets/natural.pdf"
+import woodCollectionPdf from "./assets/wood.pdf"
+
 const DayAndNight = () => {
   const { t } = useTranslation()
 
   const description = t("collections.dayAndNight.description")
+  const description2 = t("collections.dayAndNight.description2")
   const contactDescription = t("collections.dayAndNight.contactDescription")
+  const naturalCollectionLinkText = t(
+    "collections.dayAndNight.naturalCollectionLinkText"
+  )
+  const woodCollectionLinkText = t(
+    "collections.dayAndNight.woodCollectionLinkText"
+  )
   const images = [DN1, DN2, DN3, DN4, DN5]
 
   return (
@@ -21,6 +31,27 @@ const DayAndNight = () => {
         data-aos="fade-up"
       >
         <p>{description}</p>
+
+        <p className="mt-4">{description2}</p>
+
+        <div>
+          <a
+            className="button is-primary mt-5 mr-4"
+            href={naturalCollectionPdf}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {naturalCollectionLinkText}
+          </a>
+          <a
+            className="button is-primary mt-5"
+            href={woodCollectionPdf}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {woodCollectionLinkText}
+          </a>
+        </div>
       </div>
 
       <div className="collections-gallery" data-aos="fade-up">
@@ -70,7 +101,11 @@ const DayAndNight = () => {
         {contactDescription}
 
         <div className="mt-6">
-          <a className="button is-primary is-uppercase" href="#contact">
+          <a
+            className="button is-primary is-uppercase"
+            href="#contact"
+            rel="noreferrer"
+          >
             {t("collections.button")}
           </a>
         </div>

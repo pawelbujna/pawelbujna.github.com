@@ -44,7 +44,7 @@ const News = () => {
 
         <div className="columns">
           {data.allStrapiNews.edges.map(item => (
-            <div className="column" key={item.node.title}>
+            <div className="column" key={item.node.date}>
               <Card item={item.node} />
             </div>
           ))}

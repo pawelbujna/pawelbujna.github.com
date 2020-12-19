@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useTranslation } from "react-i18next"
 
 import image2 from "./assets/2.webp"
@@ -46,8 +46,12 @@ const Inspirations = () => {
         </div>
 
         <div className="columns is-multiline">
-          {images.map(image => (
-            <div className="column is-3" data-aos="fade-up">
+          {images.map((image, index) => (
+            <div
+              className="column is-3"
+              data-aos="fade-up"
+              key={`image_${index}`}
+            >
               <div
                 className="inspirations-image"
                 style={{

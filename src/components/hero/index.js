@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 import { useTranslation } from "react-i18next"
 
-import hero2 from "./assets/hero-2.webp"
-import hero3 from "./assets/hero-3.webp"
+import hero2 from "./assets/9.webp"
+import hero3 from "./assets/8.webp"
 import hero7 from "./assets/hero-7.webp"
 
 import "swiper/swiper.scss"
@@ -48,7 +48,7 @@ const Hero = () => {
               className="slider-image"
               style={{
                 backgroundImage: `url(${item.image})`,
-                backgroundPositionY: "20%",
+                backgroundPositionY: "37%",
               }}
             ></div>
             <div className="cover">

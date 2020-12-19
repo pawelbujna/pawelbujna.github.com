@@ -63,17 +63,17 @@ const Navigation = ({ location }) => {
       <div className="container">
         <div className="navbar-brand">
           {location.pathname === "/" ? (
-            <a
-              className="navbar-item logo"
+            <span
+              className="navbar-item logo is-clickable"
               onClick={() => {
                 setCurrentElement({ name: "hero", offset: 150 })
               }}
             >
-              <img src={logo} />
-            </a>
+              <img alt="logo" src={logo} />
+            </span>
           ) : (
             <Link className="navbar-item logo" to={"/"}>
-              <img src={logo} />
+              <img alt="logo" src={logo} />
             </Link>
           )}
 
@@ -95,8 +95,8 @@ const Navigation = ({ location }) => {
 
         <div className={`navbar-menu ${isMenuOpened ? "is-active" : ""}`}>
           <div className="navbar-end">
-            <a
-              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+            <span
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6 is-clickable"
               onClick={() => {
                 navigate("/")
                 setCurrentElement({ name: "about-us", offset: 110 })
@@ -104,10 +104,10 @@ const Navigation = ({ location }) => {
               }}
             >
               <span>{t("navbar.about")}</span>
-            </a>
+            </span>
 
-            <a
-              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+            <span
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6 is-clickable"
               onClick={() => {
                 navigate("/")
                 setCurrentElement({ name: "collections", offset: 110 })
@@ -115,10 +115,10 @@ const Navigation = ({ location }) => {
               }}
             >
               <span>{t("navbar.collections")}</span>
-            </a>
+            </span>
 
-            <a
-              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+            <span
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6 is-clickable"
               onClick={() => {
                 navigate("/")
                 setCurrentElement({ name: "inspirations", offset: 110 })
@@ -126,10 +126,10 @@ const Navigation = ({ location }) => {
               }}
             >
               <span>{t("navbar.inspirations")}</span>
-            </a>
+            </span>
 
-            <a
-              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+            <span
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6 is-clickable"
               onClick={() => {
                 navigate("/")
                 setCurrentElement({ name: "filters", offset: 110 })
@@ -137,10 +137,10 @@ const Navigation = ({ location }) => {
               }}
             >
               <span>{t("navbar.filters")}</span>
-            </a>
+            </span>
 
-            <a
-              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+            <span
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6 is-clickable"
               onClick={() => {
                 navigate("/")
                 setCurrentElement({ name: "news", offset: 110 })
@@ -148,7 +148,7 @@ const Navigation = ({ location }) => {
               }}
             >
               <span>{t("navbar.news")}</span>
-            </a>
+            </span>
 
             {i18n.language === "pl" && (
               <Link
@@ -159,8 +159,8 @@ const Navigation = ({ location }) => {
               </Link>
             )}
 
-            <a
-              className="navbar-item has-text-weight-semibold is-uppercase is-size-6"
+            <span
+              className="navbar-item has-text-weight-semibold is-uppercase is-size-6 is-clickable"
               onClick={() => {
                 navigate("/")
                 setCurrentElement({ name: "contact", offset: 110 })
@@ -168,9 +168,9 @@ const Navigation = ({ location }) => {
               }}
             >
               <span>{t("navbar.contact")}</span>
-            </a>
+            </span>
 
-            <div
+            <span
               className="navbar-item is-size-6 is-clickable"
               onClick={() => {
                 setIsDarkTheme(!isDarkTheme)
@@ -178,7 +178,7 @@ const Navigation = ({ location }) => {
               }}
             >
               <span>{isDarkTheme ? <FiSun /> : <FiMoon />}</span>
-            </div>
+            </span>
 
             <a
               className="navbar-item is-size-6 is-clickable"
@@ -194,7 +194,7 @@ const Navigation = ({ location }) => {
             {location.pathname === "/" && (
               <>
                 {i18n.language === "en" ? (
-                  <div
+                  <span
                     className="navbar-item is-size-6 is-clickable"
                     onClick={() => {
                       changeLanguage("pl")
@@ -202,9 +202,9 @@ const Navigation = ({ location }) => {
                     }}
                   >
                     <span>PL</span>
-                  </div>
+                  </span>
                 ) : (
-                  <div
+                  <span
                     className="navbar-item is-size-6 is-clickable"
                     onClick={() => {
                       changeLanguage("en")
@@ -212,7 +212,7 @@ const Navigation = ({ location }) => {
                     }}
                   >
                     <span>EN</span>
-                  </div>
+                  </span>
                 )}
               </>
             )}

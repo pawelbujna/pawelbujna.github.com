@@ -7,6 +7,8 @@ const DayAndNightWave = () => {
   const { t } = useTranslation()
 
   const description = t("collections.dayAndNightWave.description")
+  const description1 = t("collections.dayAndNightWave.description1")
+  const description2 = t("collections.dayAndNightWave.description2")
   const contactDescription = t("collections.dayAndNightWave.contactDescription")
   const image = wave
 
@@ -16,9 +18,9 @@ const DayAndNightWave = () => {
         className="collections-description has-text-centered is-size-5"
         data-aos="fade-up"
       >
-        <p className="mb-4">{t("collections.dayAndNightWave.description")}</p>
-        <p className="mb-4">{t("collections.dayAndNightWave.description1")}</p>
-        <p className="mb-2">{t("collections.dayAndNightWave.description2")}</p>
+        <p className="mb-4">{description}</p>
+        <p className="mb-4">{description1}</p>
+        <p className="mb-2">{description2}</p>
       </div>
 
       <div

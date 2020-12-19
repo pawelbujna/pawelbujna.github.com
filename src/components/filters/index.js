@@ -19,6 +19,7 @@ const Filters = () => {
             className="button is-primary mt-5"
             href={classification}
             target="_blank"
+            rel="noreferrer"
           >
             {t("filters.button")}
           </a>

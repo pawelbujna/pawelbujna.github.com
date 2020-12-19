@@ -7,18 +7,21 @@ const Card = ({ item }) => {
   } = useTranslation()
 
   return (
-    <div class="card" data-aos="fade-up">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img src={item.image.childImageSharp.fluid.src} />
+    <div className="card" data-aos="fade-up">
+      <div className="card-image">
+        <figure className="image is-4by3">
+          <img
+            alt={item[`title_${language}`]}
+            src={item.image.childImageSharp.fluid.src}
+          />
         </figure>
       </div>
 
-      <div class="card-content">
-        <div class="content">
+      <div className="card-content">
+        <div className="content">
           <p>{item[`description_${language}`]}</p>
           <br />
-          <time datetime={item.date}>{item.date}</time>
+          <time dateTime={item.date}>{item.date}</time>
         </div>
       </div>
     </div>

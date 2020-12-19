@@ -2,17 +2,13 @@ import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
-// import useSSR from "use-ssr"
-// import Recaptcha from "react-recaptcha"
 
-const { CMS_URL } = process.env
+const CMS_URL = "https://aqueous-cove-19427.herokuapp.com"
 
 const Contact = () => {
   const { t } = useTranslation()
-  const [isVerified, setIsVerified] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  // const { isBrowser } = useSSR()
 
   const contactSchema = Yup.object().shape({
     name: Yup.string()
@@ -47,7 +43,6 @@ const Contact = () => {
     }).then(() => {
       setIsLoading(false)
       setIsSuccess(true)
-      setIsVerified(false)
       resetForm()
     })
   }
@@ -178,18 +173,6 @@ const Contact = () => {
                   </div>
 
                   <div className="contact-submit mt-4">
-                    {/* {isBrowser && (
-                      <Recaptcha
-                        sitekey="6Ldise4ZAAAAAG_eQYNqkhopulKOZzsnleWImG2d"
-                        render="explicit"
-                        verifyCallback={() => setIsVerified(true)}
-                        onloadCallback={console.log.bind(
-                          this,
-                          "recaptcha loaded"
-                        )}
-                      />
-                    )} */}
-
                     <div className="columns">
                       <div
                         className="column is-6"
@@ -217,7 +200,6 @@ const Contact = () => {
                       </div>
                       <div className="column is-6">
                         <button
-                          // disabled={!isVerified || isLoading}
                           disabled={isLoading}
                           className="button is-primary mt-5"
                           type="submit"
@@ -242,10 +224,10 @@ const Contact = () => {
                   <div>
                     <svg
                       viewBox="0 0 24 24"
-                      stroke-width="0.5"
+                      strokeWidth="0.5"
                       fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
@@ -275,10 +257,10 @@ const Contact = () => {
                   <div>
                     <svg
                       viewBox="0 0 24 24"
-                      stroke-width="0.5"
+                      strokeWidth="0.5"
                       fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <circle cx="12" cy="12" r="4" />
@@ -300,10 +282,10 @@ const Contact = () => {
                   <div>
                     <svg
                       viewBox="0 0 24 24"
-                      stroke-width="0.5"
+                      strokeWidth="0.5"
                       fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />

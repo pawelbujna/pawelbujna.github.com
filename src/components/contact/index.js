@@ -4,12 +4,14 @@ import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
 import { Title } from "components/title"
 
-const CMS_URL = "https://aqueous-cove-19427.herokuapp.com"
+// const NEX_MAILER_URL = "http://localhost:3000/api"
+const NEX_MAILER_URL = "https://adblind-next.vercel.app/api"
 
 const Contact = () => {
   const { t } = useTranslation()
   const [isSuccess, setIsSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
 
   const contactSchema = Yup.object().shape({
     name: Yup.string()
@@ -33,16 +35,23 @@ const Contact = () => {
   })
 
   const submitForm = (data, { resetForm }) => {
+    setIsError(false)
     setIsLoading(true)
-    fetch(`${CMS_URL}/messages`, {
+    fetch(`${NEX_MAILER_URL}/send`, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ...data }),
-    }).then(() => {
+    }).then(res => {
       setIsLoading(false)
+
+      if (res.error?.length > 0) {
+        setIsError(true)
+        return
+      }
+
       setIsSuccess(true)
       resetForm()
     })
@@ -183,6 +192,24 @@ const Contact = () => {
                                 className="button is-small"
                                 onClick={() => {
                                   setIsSuccess(false)
+                                }}
+                              >
+                                {t("contact.close")}
+                              </button>
+                            </p>
+                          </div>
+                        )}
+
+                        {isError && (
+                          <div className="contact-success my-6">
+                            <p>
+                              <span className="mr-4">
+                                {t("contact.emailFail")}
+                              </span>
+                              <button
+                                className="button is-small"
+                                onClick={() => {
+                                  setIsError(false)
                                 }}
                               >
                                 {t("contact.close")}

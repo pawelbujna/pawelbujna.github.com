@@ -21,39 +21,39 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .swiper-slide {
-  @include until($desktop) {
-    height: 600px !important;
-  }
+  // @include until($desktop) {
+  //   height: 600px !important;
+  // }
 
-  @include until($tablet) {
-    height: 320px !important;
-  }
+  // @include until($tablet) {
+  //   height: 320px !important;
+  // }
 
   & > div {
     position: relative;
-    height: 700px !important;
+    height: 70vh !important;
 
-    @include until($desktop) {
-      height: 600px !important;
-    }
+    // @include until($desktop) {
+    //   height: 600px !important;
+    // }
 
-    @include until($tablet) {
-      height: 320px !important;
-    }
+    // @include until($tablet) {
+    //   height: 320px !important;
+    // }
 
     & > div:not(.cover) {
       background-position: center;
       background-size: cover;
-      height: 700px !important;
+      height: 70vh !important;
       animation: shrink 26s infinite ease-in-out;
 
-      @include until($desktop) {
-        height: 600px !important;
-      }
+      // @include until($desktop) {
+      //   height: 600px !important;
+      // }
 
-      @include until($tablet) {
-        height: 320px !important;
-      }
+      // @include until($tablet) {
+      //   height: 320px !important;
+      // }
     }
   }
 

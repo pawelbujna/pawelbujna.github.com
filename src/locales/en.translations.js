@@ -63,6 +63,7 @@ const translations = {
       description2: "Check out our pattern books:",
       naturalCollectionLinkText: "NATURAL",
       woodCollectionLinkText: "WOOD",
+      description3: "Wider range of fabric colors can be sent after contact.",
       contactDescription:
         "If you want to know some details about our Day and Night Fabric Collection, please contact us.",
     },
@@ -118,6 +119,7 @@ const translations = {
     wrongEmail: "Wrong email format",
     tooLong: "This field is too long",
     emailSentSuccess: "Email has been sent",
+    emailFail: "Something went wrong. Try again later.",
     close: "Close",
   },
 }

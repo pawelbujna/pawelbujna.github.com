@@ -1,3 +1,14 @@
+## Notes
+
+App uses node 12.
+Requires build and ftp connection to nazwapl. All files needs to be published there
+
+FTP:
+host: "adamkoczorek.nazwa.pl",
+port: 21,
+user: "adamkoczorek",
+pass: `Nazwa.pl9`,
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
@@ -12,7 +23,7 @@ Kick off your project with this hello-world boilerplate. This starter ships with
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
 
-## 🚀 Quick start 
+## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
 

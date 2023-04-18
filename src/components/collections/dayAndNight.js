@@ -20,6 +20,7 @@ const DayAndNight = () => {
 
   const description = t("collections.dayAndNight.description")
   const description2 = t("collections.dayAndNight.description2")
+  const description3 = t("collections.dayAndNight.description3")
   const contactDescription = t("collections.dayAndNight.contactDescription")
   const naturalCollectionLinkText = t(
     "collections.dayAndNight.naturalCollectionLinkText"
@@ -66,6 +67,8 @@ const DayAndNight = () => {
             {woodCollectionLinkText}
           </a>
         </div>
+
+        <p className="mt-4">{description3}</p>
       </div>
 
       <div className="collections-gallery" data-aos="fade-up">

@@ -70,13 +70,15 @@ const translations = {
       description2: "Sprawdź nasze wzorniki:",
       naturalCollectionLinkText: "NATURAL",
       woodCollectionLinkText: "WOOD",
+      description3:
+        "Pełna kolorystyka tkanin możliwa do przesłania po kontakcie.",
       contactDescription:
         "Jeśli chcą Państwo poznać naszą Kolekcję Tkanin Dzień i Noc zapraszamy do kontaktu.",
     },
     dayAndNightWave: {
       description:
         "Prezentujemy Państwu nowy model tkanin dzień i noc o wzorze sinusoidalnej fali.",
-      description1: `Każda z tkanin z kolekcji dzień i noc Fala dostępna jest w kilku wersjach kolorystycznych, od białej, przez różne szarości, po czarny.`,
+      description1: `Kolekcja dzień i noc fala dostępna jest w kilku wersjach kolorystycznych, od białej, przez różne szarości, po czarny.`,
       description2: `Co istotne w produkcji rolet, tkaniny te działają na tych samych mechanizmach co zwykłe
       tkaniny dzień i noc, nie wymagają dedykowanych systemów więc wdrożenie tkanin do oferty
       producenta jest bardzo sprawne. Tkaniny są cieńsze od podstawowej naszej serii dzień i noc
@@ -128,6 +130,7 @@ const translations = {
     wrongEmail: "Niepoprawny format email",
     tooLong: "Treść tego pola jest za długa",
     emailSentSuccess: "Wiadomość została wysłana",
+    emailFail: "Coś poszło nie tak. Spróbuj ponownie później.",
     close: "Zamknij",
   },
 }

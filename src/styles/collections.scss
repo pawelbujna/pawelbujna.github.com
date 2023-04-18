@@ -94,10 +94,15 @@
       flex-wrap: wrap;
 
       & > div {
-        padding: 5px;
+        position: relative;
 
         & > div {
-          height: 100%;
+          margin: 5px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
           background-size: cover;
           display: block;
           background-position: center top;

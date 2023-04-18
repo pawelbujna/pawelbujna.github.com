@@ -20,10 +20,7 @@ const Navigation = ({ location }) => {
   }
   const scrollToSection = () => {
     const element = document.getElementById(currentElement.name)
-    window.scrollTo({
-      top: element.offsetTop - currentElement.offset,
-      behavior: "smooth",
-    })
+    window.scrollTo(0, element.offsetTop - currentElement.offset)
   }
 
   useEffect(() => {

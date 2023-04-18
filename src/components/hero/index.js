@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next"
 
 import hero2 from "./assets/9.webp"
 import hero3 from "./assets/8.webp"
-import hero7 from "./assets/hero-7.webp"
+import hero7 from "./assets/7.webp"
 
 import "swiper/swiper.scss"
 
